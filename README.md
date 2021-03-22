@@ -1,6 +1,6 @@
 # image_text_converter
 
-A new Flutter project.
+You can Extract Text from any Image and copy the Extracted Text.
 
 ## Getting Started
 

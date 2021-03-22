@@ -1,0 +1,3305 @@
+define(['dart_sdk', 'packages/flutter/src/services/system_channels.dart', 'packages/flutter/src/foundation/_platform_web.dart'], (function load__packages__firebase_ml_vision__firebase_ml_vision_dart(dart_sdk, packages__flutter__src__services__system_channels$46dart, packages__flutter__src__foundation___platform_web$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _js_helper = dart_sdk._js_helper;
+  const _interceptors = dart_sdk._interceptors;
+  const async = dart_sdk.async;
+  const ui = dart_sdk.ui;
+  const collection = dart_sdk.collection;
+  const io = dart_sdk.io;
+  const typed_data = dart_sdk.typed_data;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const platform_channel = packages__flutter__src__services__system_channels$46dart.src__services__platform_channel;
+  const message_codecs = packages__flutter__src__services__system_channels$46dart.src__services__message_codecs;
+  const platform = packages__flutter__src__foundation___platform_web$46dart.src__foundation__platform;
+  var firebase_ml_vision = Object.create(dart.library);
+  var $toString = dartx.toString;
+  var $addAll = dartx.addAll;
+  var $add = dartx.add;
+  var $forEach = dartx.forEach;
+  var $_get = dartx._get;
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $indexOf = dartx.indexOf;
+  var $substring = dartx.substring;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    BarcodeValueTypeL: () => (T.BarcodeValueTypeL = dart.constFn(dart.legacy(firebase_ml_vision.BarcodeValueType)))(),
+    BarcodeEmailTypeL: () => (T.BarcodeEmailTypeL = dart.constFn(dart.legacy(firebase_ml_vision.BarcodeEmailType)))(),
+    BarcodePhoneTypeL: () => (T.BarcodePhoneTypeL = dart.constFn(dart.legacy(firebase_ml_vision.BarcodePhoneType)))(),
+    BarcodeWiFiEncryptionTypeL: () => (T.BarcodeWiFiEncryptionTypeL = dart.constFn(dart.legacy(firebase_ml_vision.BarcodeWiFiEncryptionType)))(),
+    BarcodeAddressTypeL: () => (T.BarcodeAddressTypeL = dart.constFn(dart.legacy(firebase_ml_vision.BarcodeAddressType)))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    IdentityMapOfStringL$dynamic: () => (T.IdentityMapOfStringL$dynamic = dart.constFn(_js_helper.IdentityMap$(T.StringL(), dart.dynamic)))(),
+    BarcodeL: () => (T.BarcodeL = dart.constFn(dart.legacy(firebase_ml_vision.Barcode)))(),
+    JSArrayOfBarcodeL: () => (T.JSArrayOfBarcodeL = dart.constFn(_interceptors.JSArray$(T.BarcodeL())))(),
+    MapL: () => (T.MapL = dart.constFn(dart.legacy(core.Map)))(),
+    dynamicToNull: () => (T.dynamicToNull = dart.constFn(dart.fnType(core.Null, [dart.dynamic])))(),
+    ListOfBarcodeL: () => (T.ListOfBarcodeL = dart.constFn(core.List$(T.BarcodeL())))(),
+    ListLOfBarcodeL: () => (T.ListLOfBarcodeL = dart.constFn(dart.legacy(T.ListOfBarcodeL())))(),
+    FutureOfvoid: () => (T.FutureOfvoid = dart.constFn(async.Future$(dart.void)))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    OffsetL: () => (T.OffsetL = dart.constFn(dart.legacy(ui.Offset)))(),
+    dynamicToOffsetL: () => (T.dynamicToOffsetL = dart.constFn(dart.fnType(T.OffsetL(), [dart.dynamic])))(),
+    ListOfOffsetL: () => (T.ListOfOffsetL = dart.constFn(core.List$(T.OffsetL())))(),
+    ListLOfOffsetL: () => (T.ListLOfOffsetL = dart.constFn(dart.legacy(T.ListOfOffsetL())))(),
+    doubleL: () => (T.doubleL = dart.constFn(dart.legacy(core.double)))(),
+    BarcodeAddressL: () => (T.BarcodeAddressL = dart.constFn(dart.legacy(firebase_ml_vision.BarcodeAddress)))(),
+    ListOfBarcodeAddressL: () => (T.ListOfBarcodeAddressL = dart.constFn(core.List$(T.BarcodeAddressL())))(),
+    dynamicToBarcodeAddressL: () => (T.dynamicToBarcodeAddressL = dart.constFn(dart.fnType(T.BarcodeAddressL(), [dart.dynamic])))(),
+    BarcodeEmailL: () => (T.BarcodeEmailL = dart.constFn(dart.legacy(firebase_ml_vision.BarcodeEmail)))(),
+    ListOfBarcodeEmailL: () => (T.ListOfBarcodeEmailL = dart.constFn(core.List$(T.BarcodeEmailL())))(),
+    dynamicToBarcodeEmailL: () => (T.dynamicToBarcodeEmailL = dart.constFn(dart.fnType(T.BarcodeEmailL(), [dart.dynamic])))(),
+    BarcodePhoneL: () => (T.BarcodePhoneL = dart.constFn(dart.legacy(firebase_ml_vision.BarcodePhone)))(),
+    ListOfBarcodePhoneL: () => (T.ListOfBarcodePhoneL = dart.constFn(core.List$(T.BarcodePhoneL())))(),
+    dynamicToBarcodePhoneL: () => (T.dynamicToBarcodePhoneL = dart.constFn(dart.fnType(T.BarcodePhoneL(), [dart.dynamic])))(),
+    ListOfStringL: () => (T.ListOfStringL = dart.constFn(core.List$(T.StringL())))(),
+    dynamicToStringL: () => (T.dynamicToStringL = dart.constFn(dart.fnType(T.StringL(), [dart.dynamic])))(),
+    FaceDetectorModeL: () => (T.FaceDetectorModeL = dart.constFn(dart.legacy(firebase_ml_vision.FaceDetectorMode)))(),
+    FaceLandmarkTypeL: () => (T.FaceLandmarkTypeL = dart.constFn(dart.legacy(firebase_ml_vision.FaceLandmarkType)))(),
+    FaceContourTypeL: () => (T.FaceContourTypeL = dart.constFn(dart.legacy(firebase_ml_vision.FaceContourType)))(),
+    FaceL: () => (T.FaceL = dart.constFn(dart.legacy(firebase_ml_vision.Face)))(),
+    JSArrayOfFaceL: () => (T.JSArrayOfFaceL = dart.constFn(_interceptors.JSArray$(T.FaceL())))(),
+    ListOfFaceL: () => (T.ListOfFaceL = dart.constFn(core.List$(T.FaceL())))(),
+    ListLOfFaceL: () => (T.ListLOfFaceL = dart.constFn(dart.legacy(T.ListOfFaceL())))(),
+    FaceLandmarkL: () => (T.FaceLandmarkL = dart.constFn(dart.legacy(firebase_ml_vision.FaceLandmark)))(),
+    LinkedHashMapOfFaceLandmarkTypeL$FaceLandmarkL: () => (T.LinkedHashMapOfFaceLandmarkTypeL$FaceLandmarkL = dart.constFn(collection.LinkedHashMap$(T.FaceLandmarkTypeL(), T.FaceLandmarkL())))(),
+    ListL: () => (T.ListL = dart.constFn(dart.legacy(core.List)))(),
+    FaceLandmarkTypeLToFaceLandmarkL: () => (T.FaceLandmarkTypeLToFaceLandmarkL = dart.constFn(dart.fnType(T.FaceLandmarkL(), [T.FaceLandmarkTypeL()])))(),
+    FaceContourL: () => (T.FaceContourL = dart.constFn(dart.legacy(firebase_ml_vision.FaceContour)))(),
+    LinkedHashMapOfFaceContourTypeL$FaceContourL: () => (T.LinkedHashMapOfFaceContourTypeL$FaceContourL = dart.constFn(collection.LinkedHashMap$(T.FaceContourTypeL(), T.FaceContourL())))(),
+    FaceContourTypeLToFaceContourL: () => (T.FaceContourTypeLToFaceContourL = dart.constFn(dart.fnType(T.FaceContourL(), [T.FaceContourTypeL()])))(),
+    _ImageTypeL: () => (T._ImageTypeL = dart.constFn(dart.legacy(firebase_ml_vision._ImageType)))(),
+    ImageRotationL: () => (T.ImageRotationL = dart.constFn(dart.legacy(firebase_ml_vision.ImageRotation)))(),
+    ModelTypeL: () => (T.ModelTypeL = dart.constFn(dart.legacy(firebase_ml_vision.ModelType)))(),
+    MapOfStringL$dynamic: () => (T.MapOfStringL$dynamic = dart.constFn(core.Map$(T.StringL(), dart.dynamic)))(),
+    MapLOfStringL$dynamic: () => (T.MapLOfStringL$dynamic = dart.constFn(dart.legacy(T.MapOfStringL$dynamic())))(),
+    FirebaseVisionImagePlaneMetadataL: () => (T.FirebaseVisionImagePlaneMetadataL = dart.constFn(dart.legacy(firebase_ml_vision.FirebaseVisionImagePlaneMetadata)))(),
+    FirebaseVisionImagePlaneMetadataLToMapLOfStringL$dynamic: () => (T.FirebaseVisionImagePlaneMetadataLToMapLOfStringL$dynamic = dart.constFn(dart.fnType(T.MapLOfStringL$dynamic(), [T.FirebaseVisionImagePlaneMetadataL()])))(),
+    ImageLabelL: () => (T.ImageLabelL = dart.constFn(dart.legacy(firebase_ml_vision.ImageLabel)))(),
+    JSArrayOfImageLabelL: () => (T.JSArrayOfImageLabelL = dart.constFn(_interceptors.JSArray$(T.ImageLabelL())))(),
+    ListOfImageLabelL: () => (T.ListOfImageLabelL = dart.constFn(core.List$(T.ImageLabelL())))(),
+    ListLOfImageLabelL: () => (T.ListLOfImageLabelL = dart.constFn(dart.legacy(T.ListOfImageLabelL())))(),
+    CloudTextModelTypeL: () => (T.CloudTextModelTypeL = dart.constFn(dart.legacy(firebase_ml_vision.CloudTextModelType)))(),
+    VisionTextL: () => (T.VisionTextL = dart.constFn(dart.legacy(firebase_ml_vision.VisionText)))(),
+    TextBlockL: () => (T.TextBlockL = dart.constFn(dart.legacy(firebase_ml_vision.TextBlock)))(),
+    ListOfTextBlockL: () => (T.ListOfTextBlockL = dart.constFn(core.List$(T.TextBlockL())))(),
+    dynamicToTextBlockL: () => (T.dynamicToTextBlockL = dart.constFn(dart.fnType(T.TextBlockL(), [dart.dynamic])))(),
+    RecognizedLanguageL: () => (T.RecognizedLanguageL = dart.constFn(dart.legacy(firebase_ml_vision.RecognizedLanguage)))(),
+    ListOfRecognizedLanguageL: () => (T.ListOfRecognizedLanguageL = dart.constFn(core.List$(T.RecognizedLanguageL())))(),
+    dynamicToRecognizedLanguageL: () => (T.dynamicToRecognizedLanguageL = dart.constFn(dart.fnType(T.RecognizedLanguageL(), [dart.dynamic])))(),
+    TextLineL: () => (T.TextLineL = dart.constFn(dart.legacy(firebase_ml_vision.TextLine)))(),
+    ListOfTextLineL: () => (T.ListOfTextLineL = dart.constFn(core.List$(T.TextLineL())))(),
+    dynamicToTextLineL: () => (T.dynamicToTextLineL = dart.constFn(dart.fnType(T.TextLineL(), [dart.dynamic])))(),
+    TextElementL: () => (T.TextElementL = dart.constFn(dart.legacy(firebase_ml_vision.TextElement)))(),
+    ListOfTextElementL: () => (T.ListOfTextElementL = dart.constFn(core.List$(T.TextElementL())))(),
+    dynamicToTextElementL: () => (T.dynamicToTextElementL = dart.constFn(dart.fnType(T.TextElementL(), [dart.dynamic])))(),
+    TextRecognizedBreakTypeL: () => (T.TextRecognizedBreakTypeL = dart.constFn(dart.legacy(firebase_ml_vision.TextRecognizedBreakType)))(),
+    VisionDocumentTextL: () => (T.VisionDocumentTextL = dart.constFn(dart.legacy(firebase_ml_vision.VisionDocumentText)))(),
+    boolL: () => (T.boolL = dart.constFn(dart.legacy(core.bool)))(),
+    DocumentTextBlockL: () => (T.DocumentTextBlockL = dart.constFn(dart.legacy(firebase_ml_vision.DocumentTextBlock)))(),
+    ListOfDocumentTextBlockL: () => (T.ListOfDocumentTextBlockL = dart.constFn(core.List$(T.DocumentTextBlockL())))(),
+    dynamicToDocumentTextBlockL: () => (T.dynamicToDocumentTextBlockL = dart.constFn(dart.fnType(T.DocumentTextBlockL(), [dart.dynamic])))(),
+    DocumentTextParagraphL: () => (T.DocumentTextParagraphL = dart.constFn(dart.legacy(firebase_ml_vision.DocumentTextParagraph)))(),
+    ListOfDocumentTextParagraphL: () => (T.ListOfDocumentTextParagraphL = dart.constFn(core.List$(T.DocumentTextParagraphL())))(),
+    dynamicToDocumentTextParagraphL: () => (T.dynamicToDocumentTextParagraphL = dart.constFn(dart.fnType(T.DocumentTextParagraphL(), [dart.dynamic])))(),
+    DocumentTextWordL: () => (T.DocumentTextWordL = dart.constFn(dart.legacy(firebase_ml_vision.DocumentTextWord)))(),
+    ListOfDocumentTextWordL: () => (T.ListOfDocumentTextWordL = dart.constFn(core.List$(T.DocumentTextWordL())))(),
+    dynamicToDocumentTextWordL: () => (T.dynamicToDocumentTextWordL = dart.constFn(dart.fnType(T.DocumentTextWordL(), [dart.dynamic])))(),
+    DocumentTextSymbolL: () => (T.DocumentTextSymbolL = dart.constFn(dart.legacy(firebase_ml_vision.DocumentTextSymbol)))(),
+    ListOfDocumentTextSymbolL: () => (T.ListOfDocumentTextSymbolL = dart.constFn(core.List$(T.DocumentTextSymbolL())))(),
+    dynamicToDocumentTextSymbolL: () => (T.dynamicToDocumentTextSymbolL = dart.constFn(dart.fnType(T.DocumentTextSymbolL(), [dart.dynamic])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeValueType.prototype,
+        [_name$]: "BarcodeValueType.unknown",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeValueType.prototype,
+        [_name$]: "BarcodeValueType.contactInfo",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeValueType.prototype,
+        [_name$]: "BarcodeValueType.email",
+        index: 2
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeValueType.prototype,
+        [_name$]: "BarcodeValueType.isbn",
+        index: 3
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeValueType.prototype,
+        [_name$]: "BarcodeValueType.phone",
+        index: 4
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeValueType.prototype,
+        [_name$]: "BarcodeValueType.product",
+        index: 5
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeValueType.prototype,
+        [_name$]: "BarcodeValueType.sms",
+        index: 6
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeValueType.prototype,
+        [_name$]: "BarcodeValueType.text",
+        index: 7
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeValueType.prototype,
+        [_name$]: "BarcodeValueType.url",
+        index: 8
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeValueType.prototype,
+        [_name$]: "BarcodeValueType.wifi",
+        index: 9
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeValueType.prototype,
+        [_name$]: "BarcodeValueType.geographicCoordinates",
+        index: 10
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeValueType.prototype,
+        [_name$]: "BarcodeValueType.calendarEvent",
+        index: 11
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeValueType.prototype,
+        [_name$]: "BarcodeValueType.driverLicense",
+        index: 12
+      });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4, C[5] || CT.C5, C[6] || CT.C6, C[7] || CT.C7, C[8] || CT.C8, C[9] || CT.C9, C[10] || CT.C10, C[11] || CT.C11, C[12] || CT.C12], T.BarcodeValueTypeL());
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeEmailType.prototype,
+        [_name$]: "BarcodeEmailType.unknown",
+        index: 0
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeEmailType.prototype,
+        [_name$]: "BarcodeEmailType.work",
+        index: 1
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeEmailType.prototype,
+        [_name$]: "BarcodeEmailType.home",
+        index: 2
+      });
+    },
+    get C17() {
+      return C[17] = dart.constList([C[14] || CT.C14, C[15] || CT.C15, C[16] || CT.C16], T.BarcodeEmailTypeL());
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: firebase_ml_vision.BarcodePhoneType.prototype,
+        [_name$]: "BarcodePhoneType.unknown",
+        index: 0
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: firebase_ml_vision.BarcodePhoneType.prototype,
+        [_name$]: "BarcodePhoneType.work",
+        index: 1
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: firebase_ml_vision.BarcodePhoneType.prototype,
+        [_name$]: "BarcodePhoneType.home",
+        index: 2
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: firebase_ml_vision.BarcodePhoneType.prototype,
+        [_name$]: "BarcodePhoneType.fax",
+        index: 3
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: firebase_ml_vision.BarcodePhoneType.prototype,
+        [_name$]: "BarcodePhoneType.mobile",
+        index: 4
+      });
+    },
+    get C23() {
+      return C[23] = dart.constList([C[18] || CT.C18, C[19] || CT.C19, C[20] || CT.C20, C[21] || CT.C21, C[22] || CT.C22], T.BarcodePhoneTypeL());
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeWiFiEncryptionType.prototype,
+        [_name$]: "BarcodeWiFiEncryptionType.unknown",
+        index: 0
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeWiFiEncryptionType.prototype,
+        [_name$]: "BarcodeWiFiEncryptionType.open",
+        index: 1
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeWiFiEncryptionType.prototype,
+        [_name$]: "BarcodeWiFiEncryptionType.wpa",
+        index: 2
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeWiFiEncryptionType.prototype,
+        [_name$]: "BarcodeWiFiEncryptionType.wep",
+        index: 3
+      });
+    },
+    get C28() {
+      return C[28] = dart.constList([C[24] || CT.C24, C[25] || CT.C25, C[26] || CT.C26, C[27] || CT.C27], T.BarcodeWiFiEncryptionTypeL());
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeAddressType.prototype,
+        [_name$]: "BarcodeAddressType.unknown",
+        index: 0
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeAddressType.prototype,
+        [_name$]: "BarcodeAddressType.work",
+        index: 1
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeAddressType.prototype,
+        [_name$]: "BarcodeAddressType.home",
+        index: 2
+      });
+    },
+    get C32() {
+      return C[32] = dart.constList([C[29] || CT.C29, C[30] || CT.C30, C[31] || CT.C31], T.BarcodeAddressTypeL());
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeFormat.prototype,
+        [value$]: 65535
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeFormat.prototype,
+        [value$]: 0
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeFormat.prototype,
+        [value$]: 1
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeFormat.prototype,
+        [value$]: 2
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeFormat.prototype,
+        [value$]: 4
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeFormat.prototype,
+        [value$]: 8
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeFormat.prototype,
+        [value$]: 16
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeFormat.prototype,
+        [value$]: 32
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeFormat.prototype,
+        [value$]: 64
+      });
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeFormat.prototype,
+        [value$]: 128
+      });
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeFormat.prototype,
+        [value$]: 256
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeFormat.prototype,
+        [value$]: 512
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeFormat.prototype,
+        [value$]: 1024
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeFormat.prototype,
+        [value$]: 2048
+      });
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeFormat.prototype,
+        [value$]: 4096
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: firebase_ml_vision.FaceDetectorMode.prototype,
+        [_name$]: "FaceDetectorMode.accurate",
+        index: 0
+      });
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: firebase_ml_vision.FaceDetectorMode.prototype,
+        [_name$]: "FaceDetectorMode.fast",
+        index: 1
+      });
+    },
+    get C50() {
+      return C[50] = dart.constList([C[48] || CT.C48, C[49] || CT.C49], T.FaceDetectorModeL());
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: firebase_ml_vision.FaceLandmarkType.prototype,
+        [_name$]: "FaceLandmarkType.bottomMouth",
+        index: 0
+      });
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: firebase_ml_vision.FaceLandmarkType.prototype,
+        [_name$]: "FaceLandmarkType.leftCheek",
+        index: 1
+      });
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: firebase_ml_vision.FaceLandmarkType.prototype,
+        [_name$]: "FaceLandmarkType.leftEar",
+        index: 2
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: firebase_ml_vision.FaceLandmarkType.prototype,
+        [_name$]: "FaceLandmarkType.leftEye",
+        index: 3
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: firebase_ml_vision.FaceLandmarkType.prototype,
+        [_name$]: "FaceLandmarkType.leftMouth",
+        index: 4
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: firebase_ml_vision.FaceLandmarkType.prototype,
+        [_name$]: "FaceLandmarkType.noseBase",
+        index: 5
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: firebase_ml_vision.FaceLandmarkType.prototype,
+        [_name$]: "FaceLandmarkType.rightCheek",
+        index: 6
+      });
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: firebase_ml_vision.FaceLandmarkType.prototype,
+        [_name$]: "FaceLandmarkType.rightEar",
+        index: 7
+      });
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: firebase_ml_vision.FaceLandmarkType.prototype,
+        [_name$]: "FaceLandmarkType.rightEye",
+        index: 8
+      });
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: firebase_ml_vision.FaceLandmarkType.prototype,
+        [_name$]: "FaceLandmarkType.rightMouth",
+        index: 9
+      });
+    },
+    get C61() {
+      return C[61] = dart.constList([C[51] || CT.C51, C[52] || CT.C52, C[53] || CT.C53, C[54] || CT.C54, C[55] || CT.C55, C[56] || CT.C56, C[57] || CT.C57, C[58] || CT.C58, C[59] || CT.C59, C[60] || CT.C60], T.FaceLandmarkTypeL());
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: firebase_ml_vision.FaceContourType.prototype,
+        [_name$]: "FaceContourType.allPoints",
+        index: 0
+      });
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: firebase_ml_vision.FaceContourType.prototype,
+        [_name$]: "FaceContourType.face",
+        index: 1
+      });
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: firebase_ml_vision.FaceContourType.prototype,
+        [_name$]: "FaceContourType.leftEye",
+        index: 2
+      });
+    },
+    get C65() {
+      return C[65] = dart.const({
+        __proto__: firebase_ml_vision.FaceContourType.prototype,
+        [_name$]: "FaceContourType.leftEyebrowBottom",
+        index: 3
+      });
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: firebase_ml_vision.FaceContourType.prototype,
+        [_name$]: "FaceContourType.leftEyebrowTop",
+        index: 4
+      });
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: firebase_ml_vision.FaceContourType.prototype,
+        [_name$]: "FaceContourType.lowerLipBottom",
+        index: 5
+      });
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: firebase_ml_vision.FaceContourType.prototype,
+        [_name$]: "FaceContourType.lowerLipTop",
+        index: 6
+      });
+    },
+    get C69() {
+      return C[69] = dart.const({
+        __proto__: firebase_ml_vision.FaceContourType.prototype,
+        [_name$]: "FaceContourType.noseBottom",
+        index: 7
+      });
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: firebase_ml_vision.FaceContourType.prototype,
+        [_name$]: "FaceContourType.noseBridge",
+        index: 8
+      });
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: firebase_ml_vision.FaceContourType.prototype,
+        [_name$]: "FaceContourType.rightEye",
+        index: 9
+      });
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: firebase_ml_vision.FaceContourType.prototype,
+        [_name$]: "FaceContourType.rightEyebrowBottom",
+        index: 10
+      });
+    },
+    get C73() {
+      return C[73] = dart.const({
+        __proto__: firebase_ml_vision.FaceContourType.prototype,
+        [_name$]: "FaceContourType.rightEyebrowTop",
+        index: 11
+      });
+    },
+    get C74() {
+      return C[74] = dart.const({
+        __proto__: firebase_ml_vision.FaceContourType.prototype,
+        [_name$]: "FaceContourType.upperLipBottom",
+        index: 12
+      });
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: firebase_ml_vision.FaceContourType.prototype,
+        [_name$]: "FaceContourType.upperLipTop",
+        index: 13
+      });
+    },
+    get C76() {
+      return C[76] = dart.constList([C[62] || CT.C62, C[63] || CT.C63, C[64] || CT.C64, C[65] || CT.C65, C[66] || CT.C66, C[67] || CT.C67, C[68] || CT.C68, C[69] || CT.C69, C[70] || CT.C70, C[71] || CT.C71, C[72] || CT.C72, C[73] || CT.C73, C[74] || CT.C74, C[75] || CT.C75], T.FaceContourTypeL());
+    },
+    get C77() {
+      return C[77] = dart.const({
+        __proto__: firebase_ml_vision._ImageType.prototype,
+        [_name$]: "_ImageType.file",
+        index: 0
+      });
+    },
+    get C78() {
+      return C[78] = dart.const({
+        __proto__: firebase_ml_vision._ImageType.prototype,
+        [_name$]: "_ImageType.bytes",
+        index: 1
+      });
+    },
+    get C79() {
+      return C[79] = dart.constList([C[77] || CT.C77, C[78] || CT.C78], T._ImageTypeL());
+    },
+    get C80() {
+      return C[80] = dart.const({
+        __proto__: firebase_ml_vision.ImageRotation.prototype,
+        [_name$]: "ImageRotation.rotation0",
+        index: 0
+      });
+    },
+    get C81() {
+      return C[81] = dart.const({
+        __proto__: firebase_ml_vision.ImageRotation.prototype,
+        [_name$]: "ImageRotation.rotation90",
+        index: 1
+      });
+    },
+    get C82() {
+      return C[82] = dart.const({
+        __proto__: firebase_ml_vision.ImageRotation.prototype,
+        [_name$]: "ImageRotation.rotation180",
+        index: 2
+      });
+    },
+    get C83() {
+      return C[83] = dart.const({
+        __proto__: firebase_ml_vision.ImageRotation.prototype,
+        [_name$]: "ImageRotation.rotation270",
+        index: 3
+      });
+    },
+    get C84() {
+      return C[84] = dart.constList([C[80] || CT.C80, C[81] || CT.C81, C[82] || CT.C82, C[83] || CT.C83], T.ImageRotationL());
+    },
+    get C85() {
+      return C[85] = dart.const({
+        __proto__: firebase_ml_vision.ModelType.prototype,
+        [_name$]: "ModelType.onDevice",
+        index: 0
+      });
+    },
+    get C86() {
+      return C[86] = dart.const({
+        __proto__: firebase_ml_vision.ModelType.prototype,
+        [_name$]: "ModelType.cloud",
+        index: 1
+      });
+    },
+    get C87() {
+      return C[87] = dart.constList([C[85] || CT.C85, C[86] || CT.C86], T.ModelTypeL());
+    },
+    get C88() {
+      return C[88] = dart.const({
+        __proto__: firebase_ml_vision.BarcodeDetectorOptions.prototype,
+        [barcodeFormats$]: C[33] || CT.C33
+      });
+    },
+    get C89() {
+      return C[89] = dart.const({
+        __proto__: firebase_ml_vision.FaceDetectorOptions.prototype,
+        [mode$]: C[49] || CT.C49,
+        [minFaceSize$]: 0.1,
+        [enableTracking$]: false,
+        [enableContours$]: false,
+        [enableLandmarks$]: false,
+        [enableClassification$]: false
+      });
+    },
+    get C90() {
+      return C[90] = dart.const({
+        __proto__: firebase_ml_vision.ImageLabelerOptions.prototype,
+        [ImageLabelerOptions_confidenceThreshold]: 0.5
+      });
+    },
+    get C91() {
+      return C[91] = dart.const({
+        __proto__: firebase_ml_vision.CloudImageLabelerOptions.prototype,
+        [CloudImageLabelerOptions_confidenceThreshold]: 0.5
+      });
+    },
+    get C93() {
+      return C[93] = dart.const({
+        __proto__: firebase_ml_vision.CloudTextModelType.prototype,
+        [_name$]: "CloudTextModelType.sparse",
+        index: 0
+      });
+    },
+    get C92() {
+      return C[92] = dart.const({
+        __proto__: firebase_ml_vision.CloudTextRecognizerOptions.prototype,
+        [CloudTextRecognizerOptions_textModelType]: C[93] || CT.C93,
+        [CloudTextRecognizerOptions_hintedLanguages]: null
+      });
+    },
+    get C94() {
+      return C[94] = dart.const({
+        __proto__: firebase_ml_vision.CloudDocumentRecognizerOptions.prototype,
+        [CloudDocumentRecognizerOptions_hintedLanguages]: null
+      });
+    },
+    get C97() {
+      return C[97] = dart.const({
+        __proto__: message_codecs.StandardMessageCodec.prototype
+      });
+    },
+    get C96() {
+      return C[96] = dart.const({
+        __proto__: message_codecs.StandardMethodCodec.prototype,
+        [StandardMethodCodec_messageCodec]: C[97] || CT.C97
+      });
+    },
+    get C95() {
+      return C[95] = dart.const({
+        __proto__: platform_channel.MethodChannel.prototype,
+        [MethodChannel__binaryMessenger]: null,
+        [MethodChannel_codec]: C[96] || CT.C96,
+        [MethodChannel_name]: "plugins.flutter.io/firebase_ml_vision"
+      });
+    },
+    get C98() {
+      return C[98] = dart.const({
+        __proto__: firebase_ml_vision.CloudTextModelType.prototype,
+        [_name$]: "CloudTextModelType.dense",
+        index: 1
+      });
+    },
+    get C99() {
+      return C[99] = dart.constList([C[93] || CT.C93, C[98] || CT.C98], T.CloudTextModelTypeL());
+    },
+    get C100() {
+      return C[100] = dart.const({
+        __proto__: firebase_ml_vision.TextRecognizedBreakType.prototype,
+        [_name$]: "TextRecognizedBreakType.unknown",
+        index: 0
+      });
+    },
+    get C101() {
+      return C[101] = dart.const({
+        __proto__: firebase_ml_vision.TextRecognizedBreakType.prototype,
+        [_name$]: "TextRecognizedBreakType.space",
+        index: 1
+      });
+    },
+    get C102() {
+      return C[102] = dart.const({
+        __proto__: firebase_ml_vision.TextRecognizedBreakType.prototype,
+        [_name$]: "TextRecognizedBreakType.sureSpace",
+        index: 2
+      });
+    },
+    get C103() {
+      return C[103] = dart.const({
+        __proto__: firebase_ml_vision.TextRecognizedBreakType.prototype,
+        [_name$]: "TextRecognizedBreakType.eolSureSpace",
+        index: 3
+      });
+    },
+    get C104() {
+      return C[104] = dart.const({
+        __proto__: firebase_ml_vision.TextRecognizedBreakType.prototype,
+        [_name$]: "TextRecognizedBreakType.hyphen",
+        index: 4
+      });
+    },
+    get C105() {
+      return C[105] = dart.const({
+        __proto__: firebase_ml_vision.TextRecognizedBreakType.prototype,
+        [_name$]: "TextRecognizedBreakType.lineBreak",
+        index: 5
+      });
+    },
+    get C106() {
+      return C[106] = dart.constList([C[100] || CT.C100, C[101] || CT.C101, C[102] || CT.C102, C[103] || CT.C103, C[104] || CT.C104, C[105] || CT.C105], T.TextRecognizedBreakTypeL());
+    }
+  }, false);
+  var C = Array(107).fill(void 0);
+  var I = [
+    "package:firebase_ml_vision/firebase_ml_vision.dart",
+    "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_ml_vision-0.9.10/lib/src/barcode_detector.dart",
+    "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_ml_vision-0.9.10/lib/src/face_detector.dart",
+    "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_ml_vision-0.9.10/lib/src/firebase_vision.dart",
+    "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_ml_vision-0.9.10/lib/src/image_labeler.dart",
+    "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_ml_vision-0.9.10/lib/src/text_recognizer.dart",
+    "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_ml_vision-0.9.10/lib/src/document_text_recognizer.dart"
+  ];
+  var _name$ = dart.privateName(firebase_ml_vision, "_name");
+  firebase_ml_vision.BarcodeValueType = class BarcodeValueType extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (firebase_ml_vision.BarcodeValueType.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = firebase_ml_vision.BarcodeValueType.prototype;
+  dart.addTypeTests(firebase_ml_vision.BarcodeValueType);
+  dart.addTypeCaches(firebase_ml_vision.BarcodeValueType);
+  dart.setMethodSignature(firebase_ml_vision.BarcodeValueType, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.BarcodeValueType.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.BarcodeValueType, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.BarcodeValueType, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.BarcodeValueType.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(firebase_ml_vision.BarcodeValueType, ['toString']);
+  firebase_ml_vision.BarcodeValueType.unknown = C[0] || CT.C0;
+  firebase_ml_vision.BarcodeValueType.contactInfo = C[1] || CT.C1;
+  firebase_ml_vision.BarcodeValueType.email = C[2] || CT.C2;
+  firebase_ml_vision.BarcodeValueType.isbn = C[3] || CT.C3;
+  firebase_ml_vision.BarcodeValueType.phone = C[4] || CT.C4;
+  firebase_ml_vision.BarcodeValueType.product = C[5] || CT.C5;
+  firebase_ml_vision.BarcodeValueType.sms = C[6] || CT.C6;
+  firebase_ml_vision.BarcodeValueType.text = C[7] || CT.C7;
+  firebase_ml_vision.BarcodeValueType.url = C[8] || CT.C8;
+  firebase_ml_vision.BarcodeValueType.wifi = C[9] || CT.C9;
+  firebase_ml_vision.BarcodeValueType.geographicCoordinates = C[10] || CT.C10;
+  firebase_ml_vision.BarcodeValueType.calendarEvent = C[11] || CT.C11;
+  firebase_ml_vision.BarcodeValueType.driverLicense = C[12] || CT.C12;
+  firebase_ml_vision.BarcodeValueType.values = C[13] || CT.C13;
+  firebase_ml_vision.BarcodeEmailType = class BarcodeEmailType extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (firebase_ml_vision.BarcodeEmailType.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = firebase_ml_vision.BarcodeEmailType.prototype;
+  dart.addTypeTests(firebase_ml_vision.BarcodeEmailType);
+  dart.addTypeCaches(firebase_ml_vision.BarcodeEmailType);
+  dart.setMethodSignature(firebase_ml_vision.BarcodeEmailType, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.BarcodeEmailType.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.BarcodeEmailType, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.BarcodeEmailType, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.BarcodeEmailType.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(firebase_ml_vision.BarcodeEmailType, ['toString']);
+  firebase_ml_vision.BarcodeEmailType.unknown = C[14] || CT.C14;
+  firebase_ml_vision.BarcodeEmailType.work = C[15] || CT.C15;
+  firebase_ml_vision.BarcodeEmailType.home = C[16] || CT.C16;
+  firebase_ml_vision.BarcodeEmailType.values = C[17] || CT.C17;
+  firebase_ml_vision.BarcodePhoneType = class BarcodePhoneType extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (firebase_ml_vision.BarcodePhoneType.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = firebase_ml_vision.BarcodePhoneType.prototype;
+  dart.addTypeTests(firebase_ml_vision.BarcodePhoneType);
+  dart.addTypeCaches(firebase_ml_vision.BarcodePhoneType);
+  dart.setMethodSignature(firebase_ml_vision.BarcodePhoneType, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.BarcodePhoneType.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.BarcodePhoneType, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.BarcodePhoneType, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.BarcodePhoneType.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(firebase_ml_vision.BarcodePhoneType, ['toString']);
+  firebase_ml_vision.BarcodePhoneType.unknown = C[18] || CT.C18;
+  firebase_ml_vision.BarcodePhoneType.work = C[19] || CT.C19;
+  firebase_ml_vision.BarcodePhoneType.home = C[20] || CT.C20;
+  firebase_ml_vision.BarcodePhoneType.fax = C[21] || CT.C21;
+  firebase_ml_vision.BarcodePhoneType.mobile = C[22] || CT.C22;
+  firebase_ml_vision.BarcodePhoneType.values = C[23] || CT.C23;
+  firebase_ml_vision.BarcodeWiFiEncryptionType = class BarcodeWiFiEncryptionType extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (firebase_ml_vision.BarcodeWiFiEncryptionType.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = firebase_ml_vision.BarcodeWiFiEncryptionType.prototype;
+  dart.addTypeTests(firebase_ml_vision.BarcodeWiFiEncryptionType);
+  dart.addTypeCaches(firebase_ml_vision.BarcodeWiFiEncryptionType);
+  dart.setMethodSignature(firebase_ml_vision.BarcodeWiFiEncryptionType, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.BarcodeWiFiEncryptionType.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.BarcodeWiFiEncryptionType, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.BarcodeWiFiEncryptionType, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.BarcodeWiFiEncryptionType.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(firebase_ml_vision.BarcodeWiFiEncryptionType, ['toString']);
+  firebase_ml_vision.BarcodeWiFiEncryptionType.unknown = C[24] || CT.C24;
+  firebase_ml_vision.BarcodeWiFiEncryptionType.open = C[25] || CT.C25;
+  firebase_ml_vision.BarcodeWiFiEncryptionType.wpa = C[26] || CT.C26;
+  firebase_ml_vision.BarcodeWiFiEncryptionType.wep = C[27] || CT.C27;
+  firebase_ml_vision.BarcodeWiFiEncryptionType.values = C[28] || CT.C28;
+  firebase_ml_vision.BarcodeAddressType = class BarcodeAddressType extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (firebase_ml_vision.BarcodeAddressType.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = firebase_ml_vision.BarcodeAddressType.prototype;
+  dart.addTypeTests(firebase_ml_vision.BarcodeAddressType);
+  dart.addTypeCaches(firebase_ml_vision.BarcodeAddressType);
+  dart.setMethodSignature(firebase_ml_vision.BarcodeAddressType, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.BarcodeAddressType.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.BarcodeAddressType, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.BarcodeAddressType, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.BarcodeAddressType.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(firebase_ml_vision.BarcodeAddressType, ['toString']);
+  firebase_ml_vision.BarcodeAddressType.unknown = C[29] || CT.C29;
+  firebase_ml_vision.BarcodeAddressType.work = C[30] || CT.C30;
+  firebase_ml_vision.BarcodeAddressType.home = C[31] || CT.C31;
+  firebase_ml_vision.BarcodeAddressType.values = C[32] || CT.C32;
+  var value$ = dart.privateName(firebase_ml_vision, "BarcodeFormat.value");
+  firebase_ml_vision.BarcodeFormat = class BarcodeFormat extends core.Object {
+    get value() {
+      return this[value$];
+    }
+    set value(value) {
+      super.value = value;
+    }
+    ['|'](other) {
+      return new firebase_ml_vision.BarcodeFormat.__((dart.notNull(this.value) | dart.notNull(other.value)) >>> 0);
+    }
+  };
+  (firebase_ml_vision.BarcodeFormat.__ = function(value) {
+    this[value$] = value;
+    ;
+  }).prototype = firebase_ml_vision.BarcodeFormat.prototype;
+  dart.addTypeTests(firebase_ml_vision.BarcodeFormat);
+  dart.addTypeCaches(firebase_ml_vision.BarcodeFormat);
+  dart.setMethodSignature(firebase_ml_vision.BarcodeFormat, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.BarcodeFormat.__proto__),
+    '|': dart.fnType(dart.legacy(firebase_ml_vision.BarcodeFormat), [dart.legacy(firebase_ml_vision.BarcodeFormat)])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.BarcodeFormat, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.BarcodeFormat, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.BarcodeFormat.__proto__),
+    value: dart.finalFieldType(dart.legacy(core.int))
+  }));
+  dart.defineLazy(firebase_ml_vision.BarcodeFormat, {
+    /*firebase_ml_vision.BarcodeFormat.all*/get all() {
+      return C[33] || CT.C33;
+    },
+    /*firebase_ml_vision.BarcodeFormat.unknown*/get unknown() {
+      return C[34] || CT.C34;
+    },
+    /*firebase_ml_vision.BarcodeFormat.code128*/get code128() {
+      return C[35] || CT.C35;
+    },
+    /*firebase_ml_vision.BarcodeFormat.code39*/get code39() {
+      return C[36] || CT.C36;
+    },
+    /*firebase_ml_vision.BarcodeFormat.code93*/get code93() {
+      return C[37] || CT.C37;
+    },
+    /*firebase_ml_vision.BarcodeFormat.codabar*/get codabar() {
+      return C[38] || CT.C38;
+    },
+    /*firebase_ml_vision.BarcodeFormat.dataMatrix*/get dataMatrix() {
+      return C[39] || CT.C39;
+    },
+    /*firebase_ml_vision.BarcodeFormat.ean13*/get ean13() {
+      return C[40] || CT.C40;
+    },
+    /*firebase_ml_vision.BarcodeFormat.ean8*/get ean8() {
+      return C[41] || CT.C41;
+    },
+    /*firebase_ml_vision.BarcodeFormat.itf*/get itf() {
+      return C[42] || CT.C42;
+    },
+    /*firebase_ml_vision.BarcodeFormat.qrCode*/get qrCode() {
+      return C[43] || CT.C43;
+    },
+    /*firebase_ml_vision.BarcodeFormat.upca*/get upca() {
+      return C[44] || CT.C44;
+    },
+    /*firebase_ml_vision.BarcodeFormat.upce*/get upce() {
+      return C[45] || CT.C45;
+    },
+    /*firebase_ml_vision.BarcodeFormat.pdf417*/get pdf417() {
+      return C[46] || CT.C46;
+    },
+    /*firebase_ml_vision.BarcodeFormat.aztec*/get aztec() {
+      return C[47] || CT.C47;
+    }
+  }, true);
+  var options$ = dart.privateName(firebase_ml_vision, "BarcodeDetector.options");
+  var _hasBeenOpened = dart.privateName(firebase_ml_vision, "_hasBeenOpened");
+  var _isClosed = dart.privateName(firebase_ml_vision, "_isClosed");
+  var _handle$ = dart.privateName(firebase_ml_vision, "_handle");
+  var _serialize = dart.privateName(firebase_ml_vision, "_serialize");
+  firebase_ml_vision.BarcodeDetector = class BarcodeDetector extends core.Object {
+    get options() {
+      return this[options$];
+    }
+    set options(value) {
+      super.options = value;
+    }
+    detectInImage(visionImage) {
+      return async.async(T.ListLOfBarcodeL(), (function* detectInImage() {
+        let t0;
+        if (!!dart.test(this[_isClosed])) dart.assertFailed(null, I[1], 196, 12, "!_isClosed");
+        this[_hasBeenOpened] = true;
+        let reply = (yield firebase_ml_vision.FirebaseVision.channel.invokeListMethod(dart.dynamic, "BarcodeDetector#detectInImage", (t0 = new (T.IdentityMapOfStringL$dynamic()).from(["handle", this[_handle$], "options", new (T.IdentityMapOfStringL$dynamic()).from(["barcodeFormats", this.options.barcodeFormats.value])]), (() => {
+          t0[$addAll](visionImage[_serialize]());
+          return t0;
+        })())));
+        let barcodes = T.JSArrayOfBarcodeL().of([]);
+        reply[$forEach](dart.fn(barcode => {
+          barcodes[$add](new firebase_ml_vision.Barcode.__(T.MapL().as(barcode)));
+        }, T.dynamicToNull()));
+        return barcodes;
+      }).bind(this));
+    }
+    close() {
+      if (!dart.test(this[_hasBeenOpened])) this[_isClosed] = true;
+      if (dart.test(this[_isClosed])) return T.FutureOfvoid().value(null);
+      this[_isClosed] = true;
+      return firebase_ml_vision.FirebaseVision.channel.invokeMethod(dart.void, "BarcodeDetector#close", new (T.IdentityMapOfStringL$dynamic()).from(["handle", this[_handle$]]));
+    }
+  };
+  (firebase_ml_vision.BarcodeDetector.__ = function(options, _handle) {
+    this[_hasBeenOpened] = false;
+    this[_isClosed] = false;
+    this[options$] = options;
+    this[_handle$] = _handle;
+    if (!(options != null)) dart.assertFailed(null, I[1], 186, 58, "options != null");
+    ;
+  }).prototype = firebase_ml_vision.BarcodeDetector.prototype;
+  dart.addTypeTests(firebase_ml_vision.BarcodeDetector);
+  dart.addTypeCaches(firebase_ml_vision.BarcodeDetector);
+  dart.setMethodSignature(firebase_ml_vision.BarcodeDetector, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.BarcodeDetector.__proto__),
+    detectInImage: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.List$(dart.legacy(firebase_ml_vision.Barcode))))), [dart.legacy(firebase_ml_vision.FirebaseVisionImage)]),
+    close: dart.fnType(dart.legacy(async.Future$(dart.void)), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.BarcodeDetector, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.BarcodeDetector, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.BarcodeDetector.__proto__),
+    options: dart.finalFieldType(dart.legacy(firebase_ml_vision.BarcodeDetectorOptions)),
+    [_handle$]: dart.finalFieldType(dart.legacy(core.int)),
+    [_hasBeenOpened]: dart.fieldType(dart.legacy(core.bool)),
+    [_isClosed]: dart.fieldType(dart.legacy(core.bool))
+  }));
+  var barcodeFormats$ = dart.privateName(firebase_ml_vision, "BarcodeDetectorOptions.barcodeFormats");
+  firebase_ml_vision.BarcodeDetectorOptions = class BarcodeDetectorOptions extends core.Object {
+    get barcodeFormats() {
+      return this[barcodeFormats$];
+    }
+    set barcodeFormats(value) {
+      super.barcodeFormats = value;
+    }
+  };
+  (firebase_ml_vision.BarcodeDetectorOptions.new = function(opts) {
+    let barcodeFormats = opts && 'barcodeFormats' in opts ? opts.barcodeFormats : C[33] || CT.C33;
+    this[barcodeFormats$] = barcodeFormats;
+    ;
+  }).prototype = firebase_ml_vision.BarcodeDetectorOptions.prototype;
+  dart.addTypeTests(firebase_ml_vision.BarcodeDetectorOptions);
+  dart.addTypeCaches(firebase_ml_vision.BarcodeDetectorOptions);
+  dart.setLibraryUri(firebase_ml_vision.BarcodeDetectorOptions, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.BarcodeDetectorOptions, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.BarcodeDetectorOptions.__proto__),
+    barcodeFormats: dart.finalFieldType(dart.legacy(firebase_ml_vision.BarcodeFormat))
+  }));
+  var boundingBox = dart.privateName(firebase_ml_vision, "Barcode.boundingBox");
+  var rawValue = dart.privateName(firebase_ml_vision, "Barcode.rawValue");
+  var displayValue = dart.privateName(firebase_ml_vision, "Barcode.displayValue");
+  var format = dart.privateName(firebase_ml_vision, "Barcode.format");
+  var valueType = dart.privateName(firebase_ml_vision, "Barcode.valueType");
+  var email = dart.privateName(firebase_ml_vision, "Barcode.email");
+  var phone = dart.privateName(firebase_ml_vision, "Barcode.phone");
+  var sms = dart.privateName(firebase_ml_vision, "Barcode.sms");
+  var url = dart.privateName(firebase_ml_vision, "Barcode.url");
+  var wifi = dart.privateName(firebase_ml_vision, "Barcode.wifi");
+  var geoPoint = dart.privateName(firebase_ml_vision, "Barcode.geoPoint");
+  var contactInfo = dart.privateName(firebase_ml_vision, "Barcode.contactInfo");
+  var calendarEvent = dart.privateName(firebase_ml_vision, "Barcode.calendarEvent");
+  var driverLicense = dart.privateName(firebase_ml_vision, "Barcode.driverLicense");
+  var _cornerPoints = dart.privateName(firebase_ml_vision, "_cornerPoints");
+  firebase_ml_vision.Barcode = class Barcode extends core.Object {
+    get boundingBox() {
+      return this[boundingBox];
+    }
+    set boundingBox(value) {
+      super.boundingBox = value;
+    }
+    get rawValue() {
+      return this[rawValue];
+    }
+    set rawValue(value) {
+      super.rawValue = value;
+    }
+    get displayValue() {
+      return this[displayValue];
+    }
+    set displayValue(value) {
+      super.displayValue = value;
+    }
+    get format() {
+      return this[format];
+    }
+    set format(value) {
+      super.format = value;
+    }
+    get valueType() {
+      return this[valueType];
+    }
+    set valueType(value) {
+      super.valueType = value;
+    }
+    get email() {
+      return this[email];
+    }
+    set email(value) {
+      super.email = value;
+    }
+    get phone() {
+      return this[phone];
+    }
+    set phone(value) {
+      super.phone = value;
+    }
+    get sms() {
+      return this[sms];
+    }
+    set sms(value) {
+      super.sms = value;
+    }
+    get url() {
+      return this[url];
+    }
+    set url(value) {
+      super.url = value;
+    }
+    get wifi() {
+      return this[wifi];
+    }
+    set wifi(value) {
+      super.wifi = value;
+    }
+    get geoPoint() {
+      return this[geoPoint];
+    }
+    set geoPoint(value) {
+      super.geoPoint = value;
+    }
+    get contactInfo() {
+      return this[contactInfo];
+    }
+    set contactInfo(value) {
+      super.contactInfo = value;
+    }
+    get calendarEvent() {
+      return this[calendarEvent];
+    }
+    set calendarEvent(value) {
+      super.calendarEvent = value;
+    }
+    get driverLicense() {
+      return this[driverLicense];
+    }
+    set driverLicense(value) {
+      super.driverLicense = value;
+    }
+    get cornerPoints() {
+      return T.ListOfOffsetL().from(this[_cornerPoints]);
+    }
+  };
+  (firebase_ml_vision.Barcode.__ = function(_data) {
+    this[boundingBox] = _data[$_get]("left") != null ? new ui.Rect.fromLTWH(core.double.as(_data[$_get]("left")), core.double.as(_data[$_get]("top")), core.double.as(_data[$_get]("width")), core.double.as(_data[$_get]("height"))) : null;
+    this[rawValue] = T.StringL().as(_data[$_get]("rawValue"));
+    this[displayValue] = T.StringL().as(_data[$_get]("displayValue"));
+    this[format] = new firebase_ml_vision.BarcodeFormat.__(T.intL().as(_data[$_get]("format")));
+    this[_cornerPoints] = T.ListLOfOffsetL().as(_data[$_get]("points") == null ? null : dart.dsend(dart.dgsend(_data[$_get]("points"), [T.OffsetL()], 'map', [dart.fn(item => new ui.Offset.new(core.double.as(dart.dsend(item, '_get', [0])), core.double.as(dart.dsend(item, '_get', [1]))), T.dynamicToOffsetL())]), 'toList', []));
+    this[valueType] = firebase_ml_vision.BarcodeValueType.values[$_get](T.intL().as(_data[$_get]("valueType")));
+    this[email] = _data[$_get]("email") == null ? null : new firebase_ml_vision.BarcodeEmail.__(T.MapL().as(_data[$_get]("email")));
+    this[phone] = _data[$_get]("phone") == null ? null : new firebase_ml_vision.BarcodePhone.__(T.MapL().as(_data[$_get]("phone")));
+    this[sms] = _data[$_get]("sms") == null ? null : new firebase_ml_vision.BarcodeSMS.__(T.MapL().as(_data[$_get]("sms")));
+    this[url] = _data[$_get]("url") == null ? null : new firebase_ml_vision.BarcodeURLBookmark.__(T.MapL().as(_data[$_get]("url")));
+    this[wifi] = _data[$_get]("wifi") == null ? null : new firebase_ml_vision.BarcodeWiFi.__(T.MapL().as(_data[$_get]("wifi")));
+    this[geoPoint] = _data[$_get]("geoPoint") == null ? null : new firebase_ml_vision.BarcodeGeoPoint.__(T.MapL().as(_data[$_get]("geoPoint")));
+    this[contactInfo] = _data[$_get]("contactInfo") == null ? null : new firebase_ml_vision.BarcodeContactInfo.__(T.MapL().as(_data[$_get]("contactInfo")));
+    this[calendarEvent] = _data[$_get]("calendarEvent") == null ? null : new firebase_ml_vision.BarcodeCalendarEvent.__(T.MapL().as(_data[$_get]("calendarEvent")));
+    this[driverLicense] = _data[$_get]("driverLicense") == null ? null : new firebase_ml_vision.BarcodeDriverLicense.__(T.MapL().as(_data[$_get]("driverLicense")));
+    ;
+  }).prototype = firebase_ml_vision.Barcode.prototype;
+  dart.addTypeTests(firebase_ml_vision.Barcode);
+  dart.addTypeCaches(firebase_ml_vision.Barcode);
+  dart.setGetterSignature(firebase_ml_vision.Barcode, () => ({
+    __proto__: dart.getGetters(firebase_ml_vision.Barcode.__proto__),
+    cornerPoints: dart.legacy(core.List$(dart.legacy(ui.Offset)))
+  }));
+  dart.setLibraryUri(firebase_ml_vision.Barcode, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.Barcode, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.Barcode.__proto__),
+    [_cornerPoints]: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(ui.Offset)))),
+    boundingBox: dart.finalFieldType(dart.legacy(ui.Rect)),
+    rawValue: dart.finalFieldType(dart.legacy(core.String)),
+    displayValue: dart.finalFieldType(dart.legacy(core.String)),
+    format: dart.finalFieldType(dart.legacy(firebase_ml_vision.BarcodeFormat)),
+    valueType: dart.finalFieldType(dart.legacy(firebase_ml_vision.BarcodeValueType)),
+    email: dart.finalFieldType(dart.legacy(firebase_ml_vision.BarcodeEmail)),
+    phone: dart.finalFieldType(dart.legacy(firebase_ml_vision.BarcodePhone)),
+    sms: dart.finalFieldType(dart.legacy(firebase_ml_vision.BarcodeSMS)),
+    url: dart.finalFieldType(dart.legacy(firebase_ml_vision.BarcodeURLBookmark)),
+    wifi: dart.finalFieldType(dart.legacy(firebase_ml_vision.BarcodeWiFi)),
+    geoPoint: dart.finalFieldType(dart.legacy(firebase_ml_vision.BarcodeGeoPoint)),
+    contactInfo: dart.finalFieldType(dart.legacy(firebase_ml_vision.BarcodeContactInfo)),
+    calendarEvent: dart.finalFieldType(dart.legacy(firebase_ml_vision.BarcodeCalendarEvent)),
+    driverLicense: dart.finalFieldType(dart.legacy(firebase_ml_vision.BarcodeDriverLicense))
+  }));
+  var address = dart.privateName(firebase_ml_vision, "BarcodeEmail.address");
+  var body = dart.privateName(firebase_ml_vision, "BarcodeEmail.body");
+  var subject = dart.privateName(firebase_ml_vision, "BarcodeEmail.subject");
+  var type = dart.privateName(firebase_ml_vision, "BarcodeEmail.type");
+  firebase_ml_vision.BarcodeEmail = class BarcodeEmail extends core.Object {
+    get address() {
+      return this[address];
+    }
+    set address(value) {
+      super.address = value;
+    }
+    get body() {
+      return this[body];
+    }
+    set body(value) {
+      super.body = value;
+    }
+    get subject() {
+      return this[subject];
+    }
+    set subject(value) {
+      super.subject = value;
+    }
+    get type() {
+      return this[type];
+    }
+    set type(value) {
+      super.type = value;
+    }
+  };
+  (firebase_ml_vision.BarcodeEmail.__ = function(data) {
+    this[type] = firebase_ml_vision.BarcodeEmailType.values[$_get](T.intL().as(data[$_get]("type")));
+    this[address] = T.StringL().as(data[$_get]("address"));
+    this[body] = T.StringL().as(data[$_get]("body"));
+    this[subject] = T.StringL().as(data[$_get]("subject"));
+    ;
+  }).prototype = firebase_ml_vision.BarcodeEmail.prototype;
+  dart.addTypeTests(firebase_ml_vision.BarcodeEmail);
+  dart.addTypeCaches(firebase_ml_vision.BarcodeEmail);
+  dart.setLibraryUri(firebase_ml_vision.BarcodeEmail, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.BarcodeEmail, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.BarcodeEmail.__proto__),
+    address: dart.finalFieldType(dart.legacy(core.String)),
+    body: dart.finalFieldType(dart.legacy(core.String)),
+    subject: dart.finalFieldType(dart.legacy(core.String)),
+    type: dart.finalFieldType(dart.legacy(firebase_ml_vision.BarcodeEmailType))
+  }));
+  var number = dart.privateName(firebase_ml_vision, "BarcodePhone.number");
+  var type$ = dart.privateName(firebase_ml_vision, "BarcodePhone.type");
+  firebase_ml_vision.BarcodePhone = class BarcodePhone extends core.Object {
+    get number() {
+      return this[number];
+    }
+    set number(value) {
+      super.number = value;
+    }
+    get type() {
+      return this[type$];
+    }
+    set type(value) {
+      super.type = value;
+    }
+  };
+  (firebase_ml_vision.BarcodePhone.__ = function(data) {
+    this[number] = T.StringL().as(data[$_get]("number"));
+    this[type$] = firebase_ml_vision.BarcodePhoneType.values[$_get](T.intL().as(data[$_get]("type")));
+    ;
+  }).prototype = firebase_ml_vision.BarcodePhone.prototype;
+  dart.addTypeTests(firebase_ml_vision.BarcodePhone);
+  dart.addTypeCaches(firebase_ml_vision.BarcodePhone);
+  dart.setLibraryUri(firebase_ml_vision.BarcodePhone, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.BarcodePhone, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.BarcodePhone.__proto__),
+    number: dart.finalFieldType(dart.legacy(core.String)),
+    type: dart.finalFieldType(dart.legacy(firebase_ml_vision.BarcodePhoneType))
+  }));
+  var message = dart.privateName(firebase_ml_vision, "BarcodeSMS.message");
+  var phoneNumber = dart.privateName(firebase_ml_vision, "BarcodeSMS.phoneNumber");
+  firebase_ml_vision.BarcodeSMS = class BarcodeSMS extends core.Object {
+    get message() {
+      return this[message];
+    }
+    set message(value) {
+      super.message = value;
+    }
+    get phoneNumber() {
+      return this[phoneNumber];
+    }
+    set phoneNumber(value) {
+      super.phoneNumber = value;
+    }
+  };
+  (firebase_ml_vision.BarcodeSMS.__ = function(data) {
+    this[message] = T.StringL().as(data[$_get]("message"));
+    this[phoneNumber] = T.StringL().as(data[$_get]("phoneNumber"));
+    ;
+  }).prototype = firebase_ml_vision.BarcodeSMS.prototype;
+  dart.addTypeTests(firebase_ml_vision.BarcodeSMS);
+  dart.addTypeCaches(firebase_ml_vision.BarcodeSMS);
+  dart.setLibraryUri(firebase_ml_vision.BarcodeSMS, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.BarcodeSMS, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.BarcodeSMS.__proto__),
+    message: dart.finalFieldType(dart.legacy(core.String)),
+    phoneNumber: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var title = dart.privateName(firebase_ml_vision, "BarcodeURLBookmark.title");
+  var url$ = dart.privateName(firebase_ml_vision, "BarcodeURLBookmark.url");
+  firebase_ml_vision.BarcodeURLBookmark = class BarcodeURLBookmark extends core.Object {
+    get title() {
+      return this[title];
+    }
+    set title(value) {
+      super.title = value;
+    }
+    get url() {
+      return this[url$];
+    }
+    set url(value) {
+      super.url = value;
+    }
+  };
+  (firebase_ml_vision.BarcodeURLBookmark.__ = function(data) {
+    this[title] = T.StringL().as(data[$_get]("title"));
+    this[url$] = T.StringL().as(data[$_get]("url"));
+    ;
+  }).prototype = firebase_ml_vision.BarcodeURLBookmark.prototype;
+  dart.addTypeTests(firebase_ml_vision.BarcodeURLBookmark);
+  dart.addTypeCaches(firebase_ml_vision.BarcodeURLBookmark);
+  dart.setLibraryUri(firebase_ml_vision.BarcodeURLBookmark, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.BarcodeURLBookmark, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.BarcodeURLBookmark.__proto__),
+    title: dart.finalFieldType(dart.legacy(core.String)),
+    url: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var ssid = dart.privateName(firebase_ml_vision, "BarcodeWiFi.ssid");
+  var password = dart.privateName(firebase_ml_vision, "BarcodeWiFi.password");
+  var encryptionType = dart.privateName(firebase_ml_vision, "BarcodeWiFi.encryptionType");
+  firebase_ml_vision.BarcodeWiFi = class BarcodeWiFi extends core.Object {
+    get ssid() {
+      return this[ssid];
+    }
+    set ssid(value) {
+      super.ssid = value;
+    }
+    get password() {
+      return this[password];
+    }
+    set password(value) {
+      super.password = value;
+    }
+    get encryptionType() {
+      return this[encryptionType];
+    }
+    set encryptionType(value) {
+      super.encryptionType = value;
+    }
+  };
+  (firebase_ml_vision.BarcodeWiFi.__ = function(data) {
+    this[ssid] = T.StringL().as(data[$_get]("ssid"));
+    this[password] = T.StringL().as(data[$_get]("password"));
+    this[encryptionType] = firebase_ml_vision.BarcodeWiFiEncryptionType.values[$_get](T.intL().as(data[$_get]("encryptionType")));
+    ;
+  }).prototype = firebase_ml_vision.BarcodeWiFi.prototype;
+  dart.addTypeTests(firebase_ml_vision.BarcodeWiFi);
+  dart.addTypeCaches(firebase_ml_vision.BarcodeWiFi);
+  dart.setLibraryUri(firebase_ml_vision.BarcodeWiFi, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.BarcodeWiFi, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.BarcodeWiFi.__proto__),
+    ssid: dart.finalFieldType(dart.legacy(core.String)),
+    password: dart.finalFieldType(dart.legacy(core.String)),
+    encryptionType: dart.finalFieldType(dart.legacy(firebase_ml_vision.BarcodeWiFiEncryptionType))
+  }));
+  var latitude = dart.privateName(firebase_ml_vision, "BarcodeGeoPoint.latitude");
+  var longitude = dart.privateName(firebase_ml_vision, "BarcodeGeoPoint.longitude");
+  firebase_ml_vision.BarcodeGeoPoint = class BarcodeGeoPoint extends core.Object {
+    get latitude() {
+      return this[latitude];
+    }
+    set latitude(value) {
+      super.latitude = value;
+    }
+    get longitude() {
+      return this[longitude];
+    }
+    set longitude(value) {
+      super.longitude = value;
+    }
+  };
+  (firebase_ml_vision.BarcodeGeoPoint.__ = function(data) {
+    this[latitude] = T.doubleL().as(data[$_get]("latitude"));
+    this[longitude] = T.doubleL().as(data[$_get]("longitude"));
+    ;
+  }).prototype = firebase_ml_vision.BarcodeGeoPoint.prototype;
+  dart.addTypeTests(firebase_ml_vision.BarcodeGeoPoint);
+  dart.addTypeCaches(firebase_ml_vision.BarcodeGeoPoint);
+  dart.setLibraryUri(firebase_ml_vision.BarcodeGeoPoint, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.BarcodeGeoPoint, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.BarcodeGeoPoint.__proto__),
+    latitude: dart.finalFieldType(dart.legacy(core.double)),
+    longitude: dart.finalFieldType(dart.legacy(core.double))
+  }));
+  var addresses = dart.privateName(firebase_ml_vision, "BarcodeContactInfo.addresses");
+  var emails = dart.privateName(firebase_ml_vision, "BarcodeContactInfo.emails");
+  var name = dart.privateName(firebase_ml_vision, "BarcodeContactInfo.name");
+  var phones = dart.privateName(firebase_ml_vision, "BarcodeContactInfo.phones");
+  var urls = dart.privateName(firebase_ml_vision, "BarcodeContactInfo.urls");
+  var jobTitle = dart.privateName(firebase_ml_vision, "BarcodeContactInfo.jobTitle");
+  var organization = dart.privateName(firebase_ml_vision, "BarcodeContactInfo.organization");
+  firebase_ml_vision.BarcodeContactInfo = class BarcodeContactInfo extends core.Object {
+    get addresses() {
+      return this[addresses];
+    }
+    set addresses(value) {
+      super.addresses = value;
+    }
+    get emails() {
+      return this[emails];
+    }
+    set emails(value) {
+      super.emails = value;
+    }
+    get name() {
+      return this[name];
+    }
+    set name(value) {
+      super.name = value;
+    }
+    get phones() {
+      return this[phones];
+    }
+    set phones(value) {
+      super.phones = value;
+    }
+    get urls() {
+      return this[urls];
+    }
+    set urls(value) {
+      super.urls = value;
+    }
+    get jobTitle() {
+      return this[jobTitle];
+    }
+    set jobTitle(value) {
+      super.jobTitle = value;
+    }
+    get organization() {
+      return this[organization];
+    }
+    set organization(value) {
+      super.organization = value;
+    }
+  };
+  (firebase_ml_vision.BarcodeContactInfo.__ = function(data) {
+    this[addresses] = data[$_get]("addresses") == null ? null : T.ListOfBarcodeAddressL().unmodifiable(core.Iterable.as(dart.dgsend(data[$_get]("addresses"), [T.BarcodeAddressL()], 'map', [dart.fn(item => new firebase_ml_vision.BarcodeAddress.__(T.MapL().as(item)), T.dynamicToBarcodeAddressL())])));
+    this[emails] = data[$_get]("emails") == null ? null : T.ListOfBarcodeEmailL().unmodifiable(core.Iterable.as(dart.dgsend(data[$_get]("emails"), [T.BarcodeEmailL()], 'map', [dart.fn(item => new firebase_ml_vision.BarcodeEmail.__(T.MapL().as(item)), T.dynamicToBarcodeEmailL())])));
+    this[name] = data[$_get]("name") == null ? null : new firebase_ml_vision.BarcodePersonName.__(T.MapL().as(data[$_get]("name")));
+    this[phones] = data[$_get]("phones") == null ? null : T.ListOfBarcodePhoneL().unmodifiable(core.Iterable.as(dart.dgsend(data[$_get]("phones"), [T.BarcodePhoneL()], 'map', [dart.fn(item => new firebase_ml_vision.BarcodePhone.__(T.MapL().as(item)), T.dynamicToBarcodePhoneL())])));
+    this[urls] = data[$_get]("urls") == null ? null : T.ListOfStringL().unmodifiable(core.Iterable.as(dart.dgsend(data[$_get]("urls"), [T.StringL()], 'map', [dart.fn(item => {
+        let s = T.StringL().as(item);
+        return s;
+      }, T.dynamicToStringL())])));
+    this[jobTitle] = T.StringL().as(data[$_get]("jobTitle"));
+    this[organization] = T.StringL().as(data[$_get]("organization"));
+    ;
+  }).prototype = firebase_ml_vision.BarcodeContactInfo.prototype;
+  dart.addTypeTests(firebase_ml_vision.BarcodeContactInfo);
+  dart.addTypeCaches(firebase_ml_vision.BarcodeContactInfo);
+  dart.setLibraryUri(firebase_ml_vision.BarcodeContactInfo, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.BarcodeContactInfo, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.BarcodeContactInfo.__proto__),
+    addresses: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(firebase_ml_vision.BarcodeAddress)))),
+    emails: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(firebase_ml_vision.BarcodeEmail)))),
+    name: dart.finalFieldType(dart.legacy(firebase_ml_vision.BarcodePersonName)),
+    phones: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(firebase_ml_vision.BarcodePhone)))),
+    urls: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    jobTitle: dart.finalFieldType(dart.legacy(core.String)),
+    organization: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var addressLines = dart.privateName(firebase_ml_vision, "BarcodeAddress.addressLines");
+  var type$0 = dart.privateName(firebase_ml_vision, "BarcodeAddress.type");
+  firebase_ml_vision.BarcodeAddress = class BarcodeAddress extends core.Object {
+    get addressLines() {
+      return this[addressLines];
+    }
+    set addressLines(value) {
+      super.addressLines = value;
+    }
+    get type() {
+      return this[type$0];
+    }
+    set type(value) {
+      super.type = value;
+    }
+  };
+  (firebase_ml_vision.BarcodeAddress.__ = function(data) {
+    this[addressLines] = T.ListOfStringL().unmodifiable(core.Iterable.as(dart.dgsend(data[$_get]("addressLines"), [T.StringL()], 'map', [dart.fn(item => {
+        let s = T.StringL().as(item);
+        return s;
+      }, T.dynamicToStringL())])));
+    this[type$0] = firebase_ml_vision.BarcodeAddressType.values[$_get](T.intL().as(data[$_get]("type")));
+    ;
+  }).prototype = firebase_ml_vision.BarcodeAddress.prototype;
+  dart.addTypeTests(firebase_ml_vision.BarcodeAddress);
+  dart.addTypeCaches(firebase_ml_vision.BarcodeAddress);
+  dart.setLibraryUri(firebase_ml_vision.BarcodeAddress, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.BarcodeAddress, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.BarcodeAddress.__proto__),
+    addressLines: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    type: dart.finalFieldType(dart.legacy(firebase_ml_vision.BarcodeAddressType))
+  }));
+  var formattedName = dart.privateName(firebase_ml_vision, "BarcodePersonName.formattedName");
+  var first = dart.privateName(firebase_ml_vision, "BarcodePersonName.first");
+  var last = dart.privateName(firebase_ml_vision, "BarcodePersonName.last");
+  var middle = dart.privateName(firebase_ml_vision, "BarcodePersonName.middle");
+  var prefix = dart.privateName(firebase_ml_vision, "BarcodePersonName.prefix");
+  var pronunciation = dart.privateName(firebase_ml_vision, "BarcodePersonName.pronunciation");
+  var suffix = dart.privateName(firebase_ml_vision, "BarcodePersonName.suffix");
+  firebase_ml_vision.BarcodePersonName = class BarcodePersonName extends core.Object {
+    get formattedName() {
+      return this[formattedName];
+    }
+    set formattedName(value) {
+      super.formattedName = value;
+    }
+    get first() {
+      return this[first];
+    }
+    set first(value) {
+      super.first = value;
+    }
+    get last() {
+      return this[last];
+    }
+    set last(value) {
+      super.last = value;
+    }
+    get middle() {
+      return this[middle];
+    }
+    set middle(value) {
+      super.middle = value;
+    }
+    get prefix() {
+      return this[prefix];
+    }
+    set prefix(value) {
+      super.prefix = value;
+    }
+    get pronunciation() {
+      return this[pronunciation];
+    }
+    set pronunciation(value) {
+      super.pronunciation = value;
+    }
+    get suffix() {
+      return this[suffix];
+    }
+    set suffix(value) {
+      super.suffix = value;
+    }
+  };
+  (firebase_ml_vision.BarcodePersonName.__ = function(data) {
+    this[formattedName] = T.StringL().as(data[$_get]("formattedName"));
+    this[first] = T.StringL().as(data[$_get]("first"));
+    this[last] = T.StringL().as(data[$_get]("last"));
+    this[middle] = T.StringL().as(data[$_get]("middle"));
+    this[prefix] = T.StringL().as(data[$_get]("prefix"));
+    this[pronunciation] = T.StringL().as(data[$_get]("pronunciation"));
+    this[suffix] = T.StringL().as(data[$_get]("suffix"));
+    ;
+  }).prototype = firebase_ml_vision.BarcodePersonName.prototype;
+  dart.addTypeTests(firebase_ml_vision.BarcodePersonName);
+  dart.addTypeCaches(firebase_ml_vision.BarcodePersonName);
+  dart.setLibraryUri(firebase_ml_vision.BarcodePersonName, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.BarcodePersonName, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.BarcodePersonName.__proto__),
+    formattedName: dart.finalFieldType(dart.legacy(core.String)),
+    first: dart.finalFieldType(dart.legacy(core.String)),
+    last: dart.finalFieldType(dart.legacy(core.String)),
+    middle: dart.finalFieldType(dart.legacy(core.String)),
+    prefix: dart.finalFieldType(dart.legacy(core.String)),
+    pronunciation: dart.finalFieldType(dart.legacy(core.String)),
+    suffix: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var eventDescription = dart.privateName(firebase_ml_vision, "BarcodeCalendarEvent.eventDescription");
+  var location = dart.privateName(firebase_ml_vision, "BarcodeCalendarEvent.location");
+  var organizer = dart.privateName(firebase_ml_vision, "BarcodeCalendarEvent.organizer");
+  var status = dart.privateName(firebase_ml_vision, "BarcodeCalendarEvent.status");
+  var summary = dart.privateName(firebase_ml_vision, "BarcodeCalendarEvent.summary");
+  var start = dart.privateName(firebase_ml_vision, "BarcodeCalendarEvent.start");
+  var end = dart.privateName(firebase_ml_vision, "BarcodeCalendarEvent.end");
+  firebase_ml_vision.BarcodeCalendarEvent = class BarcodeCalendarEvent extends core.Object {
+    get eventDescription() {
+      return this[eventDescription];
+    }
+    set eventDescription(value) {
+      super.eventDescription = value;
+    }
+    get location() {
+      return this[location];
+    }
+    set location(value) {
+      super.location = value;
+    }
+    get organizer() {
+      return this[organizer];
+    }
+    set organizer(value) {
+      super.organizer = value;
+    }
+    get status() {
+      return this[status];
+    }
+    set status(value) {
+      super.status = value;
+    }
+    get summary() {
+      return this[summary];
+    }
+    set summary(value) {
+      super.summary = value;
+    }
+    get start() {
+      return this[start];
+    }
+    set start(value) {
+      super.start = value;
+    }
+    get end() {
+      return this[end];
+    }
+    set end(value) {
+      super.end = value;
+    }
+  };
+  (firebase_ml_vision.BarcodeCalendarEvent.__ = function(data) {
+    this[eventDescription] = T.StringL().as(data[$_get]("eventDescription"));
+    this[location] = T.StringL().as(data[$_get]("location"));
+    this[organizer] = T.StringL().as(data[$_get]("organizer"));
+    this[status] = T.StringL().as(data[$_get]("status"));
+    this[summary] = T.StringL().as(data[$_get]("summary"));
+    this[start] = core.DateTime.parse(core.String.as(data[$_get]("start")));
+    this[end] = core.DateTime.parse(core.String.as(data[$_get]("end")));
+    ;
+  }).prototype = firebase_ml_vision.BarcodeCalendarEvent.prototype;
+  dart.addTypeTests(firebase_ml_vision.BarcodeCalendarEvent);
+  dart.addTypeCaches(firebase_ml_vision.BarcodeCalendarEvent);
+  dart.setLibraryUri(firebase_ml_vision.BarcodeCalendarEvent, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.BarcodeCalendarEvent, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.BarcodeCalendarEvent.__proto__),
+    eventDescription: dart.finalFieldType(dart.legacy(core.String)),
+    location: dart.finalFieldType(dart.legacy(core.String)),
+    organizer: dart.finalFieldType(dart.legacy(core.String)),
+    status: dart.finalFieldType(dart.legacy(core.String)),
+    summary: dart.finalFieldType(dart.legacy(core.String)),
+    start: dart.finalFieldType(dart.legacy(core.DateTime)),
+    end: dart.finalFieldType(dart.legacy(core.DateTime))
+  }));
+  var firstName = dart.privateName(firebase_ml_vision, "BarcodeDriverLicense.firstName");
+  var middleName = dart.privateName(firebase_ml_vision, "BarcodeDriverLicense.middleName");
+  var lastName = dart.privateName(firebase_ml_vision, "BarcodeDriverLicense.lastName");
+  var gender = dart.privateName(firebase_ml_vision, "BarcodeDriverLicense.gender");
+  var addressCity = dart.privateName(firebase_ml_vision, "BarcodeDriverLicense.addressCity");
+  var addressState = dart.privateName(firebase_ml_vision, "BarcodeDriverLicense.addressState");
+  var addressStreet = dart.privateName(firebase_ml_vision, "BarcodeDriverLicense.addressStreet");
+  var addressZip = dart.privateName(firebase_ml_vision, "BarcodeDriverLicense.addressZip");
+  var birthDate = dart.privateName(firebase_ml_vision, "BarcodeDriverLicense.birthDate");
+  var documentType = dart.privateName(firebase_ml_vision, "BarcodeDriverLicense.documentType");
+  var licenseNumber = dart.privateName(firebase_ml_vision, "BarcodeDriverLicense.licenseNumber");
+  var expiryDate = dart.privateName(firebase_ml_vision, "BarcodeDriverLicense.expiryDate");
+  var issuingDate = dart.privateName(firebase_ml_vision, "BarcodeDriverLicense.issuingDate");
+  var issuingCountry = dart.privateName(firebase_ml_vision, "BarcodeDriverLicense.issuingCountry");
+  firebase_ml_vision.BarcodeDriverLicense = class BarcodeDriverLicense extends core.Object {
+    get firstName() {
+      return this[firstName];
+    }
+    set firstName(value) {
+      super.firstName = value;
+    }
+    get middleName() {
+      return this[middleName];
+    }
+    set middleName(value) {
+      super.middleName = value;
+    }
+    get lastName() {
+      return this[lastName];
+    }
+    set lastName(value) {
+      super.lastName = value;
+    }
+    get gender() {
+      return this[gender];
+    }
+    set gender(value) {
+      super.gender = value;
+    }
+    get addressCity() {
+      return this[addressCity];
+    }
+    set addressCity(value) {
+      super.addressCity = value;
+    }
+    get addressState() {
+      return this[addressState];
+    }
+    set addressState(value) {
+      super.addressState = value;
+    }
+    get addressStreet() {
+      return this[addressStreet];
+    }
+    set addressStreet(value) {
+      super.addressStreet = value;
+    }
+    get addressZip() {
+      return this[addressZip];
+    }
+    set addressZip(value) {
+      super.addressZip = value;
+    }
+    get birthDate() {
+      return this[birthDate];
+    }
+    set birthDate(value) {
+      super.birthDate = value;
+    }
+    get documentType() {
+      return this[documentType];
+    }
+    set documentType(value) {
+      super.documentType = value;
+    }
+    get licenseNumber() {
+      return this[licenseNumber];
+    }
+    set licenseNumber(value) {
+      super.licenseNumber = value;
+    }
+    get expiryDate() {
+      return this[expiryDate];
+    }
+    set expiryDate(value) {
+      super.expiryDate = value;
+    }
+    get issuingDate() {
+      return this[issuingDate];
+    }
+    set issuingDate(value) {
+      super.issuingDate = value;
+    }
+    get issuingCountry() {
+      return this[issuingCountry];
+    }
+    set issuingCountry(value) {
+      super.issuingCountry = value;
+    }
+  };
+  (firebase_ml_vision.BarcodeDriverLicense.__ = function(data) {
+    this[firstName] = T.StringL().as(data[$_get]("firstName"));
+    this[middleName] = T.StringL().as(data[$_get]("middleName"));
+    this[lastName] = T.StringL().as(data[$_get]("lastName"));
+    this[gender] = T.StringL().as(data[$_get]("gender"));
+    this[addressCity] = T.StringL().as(data[$_get]("addressCity"));
+    this[addressState] = T.StringL().as(data[$_get]("addressState"));
+    this[addressStreet] = T.StringL().as(data[$_get]("addressStreet"));
+    this[addressZip] = T.StringL().as(data[$_get]("addressZip"));
+    this[birthDate] = T.StringL().as(data[$_get]("birthDate"));
+    this[documentType] = T.StringL().as(data[$_get]("documentType"));
+    this[licenseNumber] = T.StringL().as(data[$_get]("licenseNumber"));
+    this[expiryDate] = T.StringL().as(data[$_get]("expiryDate"));
+    this[issuingDate] = T.StringL().as(data[$_get]("issuingDate"));
+    this[issuingCountry] = T.StringL().as(data[$_get]("issuingCountry"));
+    ;
+  }).prototype = firebase_ml_vision.BarcodeDriverLicense.prototype;
+  dart.addTypeTests(firebase_ml_vision.BarcodeDriverLicense);
+  dart.addTypeCaches(firebase_ml_vision.BarcodeDriverLicense);
+  dart.setLibraryUri(firebase_ml_vision.BarcodeDriverLicense, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.BarcodeDriverLicense, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.BarcodeDriverLicense.__proto__),
+    firstName: dart.finalFieldType(dart.legacy(core.String)),
+    middleName: dart.finalFieldType(dart.legacy(core.String)),
+    lastName: dart.finalFieldType(dart.legacy(core.String)),
+    gender: dart.finalFieldType(dart.legacy(core.String)),
+    addressCity: dart.finalFieldType(dart.legacy(core.String)),
+    addressState: dart.finalFieldType(dart.legacy(core.String)),
+    addressStreet: dart.finalFieldType(dart.legacy(core.String)),
+    addressZip: dart.finalFieldType(dart.legacy(core.String)),
+    birthDate: dart.finalFieldType(dart.legacy(core.String)),
+    documentType: dart.finalFieldType(dart.legacy(core.String)),
+    licenseNumber: dart.finalFieldType(dart.legacy(core.String)),
+    expiryDate: dart.finalFieldType(dart.legacy(core.String)),
+    issuingDate: dart.finalFieldType(dart.legacy(core.String)),
+    issuingCountry: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  firebase_ml_vision.FaceDetectorMode = class FaceDetectorMode extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (firebase_ml_vision.FaceDetectorMode.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = firebase_ml_vision.FaceDetectorMode.prototype;
+  dart.addTypeTests(firebase_ml_vision.FaceDetectorMode);
+  dart.addTypeCaches(firebase_ml_vision.FaceDetectorMode);
+  dart.setMethodSignature(firebase_ml_vision.FaceDetectorMode, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.FaceDetectorMode.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.FaceDetectorMode, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.FaceDetectorMode, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.FaceDetectorMode.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(firebase_ml_vision.FaceDetectorMode, ['toString']);
+  firebase_ml_vision.FaceDetectorMode.accurate = C[48] || CT.C48;
+  firebase_ml_vision.FaceDetectorMode.fast = C[49] || CT.C49;
+  firebase_ml_vision.FaceDetectorMode.values = C[50] || CT.C50;
+  firebase_ml_vision.FaceLandmarkType = class FaceLandmarkType extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (firebase_ml_vision.FaceLandmarkType.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = firebase_ml_vision.FaceLandmarkType.prototype;
+  dart.addTypeTests(firebase_ml_vision.FaceLandmarkType);
+  dart.addTypeCaches(firebase_ml_vision.FaceLandmarkType);
+  dart.setMethodSignature(firebase_ml_vision.FaceLandmarkType, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.FaceLandmarkType.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.FaceLandmarkType, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.FaceLandmarkType, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.FaceLandmarkType.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(firebase_ml_vision.FaceLandmarkType, ['toString']);
+  firebase_ml_vision.FaceLandmarkType.bottomMouth = C[51] || CT.C51;
+  firebase_ml_vision.FaceLandmarkType.leftCheek = C[52] || CT.C52;
+  firebase_ml_vision.FaceLandmarkType.leftEar = C[53] || CT.C53;
+  firebase_ml_vision.FaceLandmarkType.leftEye = C[54] || CT.C54;
+  firebase_ml_vision.FaceLandmarkType.leftMouth = C[55] || CT.C55;
+  firebase_ml_vision.FaceLandmarkType.noseBase = C[56] || CT.C56;
+  firebase_ml_vision.FaceLandmarkType.rightCheek = C[57] || CT.C57;
+  firebase_ml_vision.FaceLandmarkType.rightEar = C[58] || CT.C58;
+  firebase_ml_vision.FaceLandmarkType.rightEye = C[59] || CT.C59;
+  firebase_ml_vision.FaceLandmarkType.rightMouth = C[60] || CT.C60;
+  firebase_ml_vision.FaceLandmarkType.values = C[61] || CT.C61;
+  firebase_ml_vision.FaceContourType = class FaceContourType extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (firebase_ml_vision.FaceContourType.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = firebase_ml_vision.FaceContourType.prototype;
+  dart.addTypeTests(firebase_ml_vision.FaceContourType);
+  dart.addTypeCaches(firebase_ml_vision.FaceContourType);
+  dart.setMethodSignature(firebase_ml_vision.FaceContourType, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.FaceContourType.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.FaceContourType, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.FaceContourType, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.FaceContourType.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(firebase_ml_vision.FaceContourType, ['toString']);
+  firebase_ml_vision.FaceContourType.allPoints = C[62] || CT.C62;
+  firebase_ml_vision.FaceContourType.face = C[63] || CT.C63;
+  firebase_ml_vision.FaceContourType.leftEye = C[64] || CT.C64;
+  firebase_ml_vision.FaceContourType.leftEyebrowBottom = C[65] || CT.C65;
+  firebase_ml_vision.FaceContourType.leftEyebrowTop = C[66] || CT.C66;
+  firebase_ml_vision.FaceContourType.lowerLipBottom = C[67] || CT.C67;
+  firebase_ml_vision.FaceContourType.lowerLipTop = C[68] || CT.C68;
+  firebase_ml_vision.FaceContourType.noseBottom = C[69] || CT.C69;
+  firebase_ml_vision.FaceContourType.noseBridge = C[70] || CT.C70;
+  firebase_ml_vision.FaceContourType.rightEye = C[71] || CT.C71;
+  firebase_ml_vision.FaceContourType.rightEyebrowBottom = C[72] || CT.C72;
+  firebase_ml_vision.FaceContourType.rightEyebrowTop = C[73] || CT.C73;
+  firebase_ml_vision.FaceContourType.upperLipBottom = C[74] || CT.C74;
+  firebase_ml_vision.FaceContourType.upperLipTop = C[75] || CT.C75;
+  firebase_ml_vision.FaceContourType.values = C[76] || CT.C76;
+  var options$0 = dart.privateName(firebase_ml_vision, "FaceDetector.options");
+  firebase_ml_vision.FaceDetector = class FaceDetector extends core.Object {
+    get options() {
+      return this[options$0];
+    }
+    set options(value) {
+      super.options = value;
+    }
+    processImage(visionImage) {
+      return async.async(T.ListLOfFaceL(), (function* processImage() {
+        let t0;
+        if (!!dart.test(this[_isClosed])) dart.assertFailed(null, I[2], 69, 12, "!_isClosed");
+        this[_hasBeenOpened] = true;
+        let reply = (yield firebase_ml_vision.FirebaseVision.channel.invokeListMethod(dart.dynamic, "FaceDetector#processImage", (t0 = new (T.IdentityMapOfStringL$dynamic()).from(["handle", this[_handle$], "options", new (T.IdentityMapOfStringL$dynamic()).from(["enableClassification", this.options.enableClassification, "enableLandmarks", this.options.enableLandmarks, "enableContours", this.options.enableContours, "enableTracking", this.options.enableTracking, "minFaceSize", this.options.minFaceSize, "mode", firebase_ml_vision._enumToString(this.options.mode)])]), (() => {
+          t0[$addAll](visionImage[_serialize]());
+          return t0;
+        })())));
+        let faces = T.JSArrayOfFaceL().of([]);
+        for (let data of reply) {
+          faces[$add](new firebase_ml_vision.Face.__(data));
+        }
+        return faces;
+      }).bind(this));
+    }
+    close() {
+      if (!dart.test(this[_hasBeenOpened])) this[_isClosed] = true;
+      if (dart.test(this[_isClosed])) return T.FutureOfvoid().value(null);
+      this[_isClosed] = true;
+      return firebase_ml_vision.FirebaseVision.channel.invokeMethod(dart.void, "FaceDetector#close", new (T.IdentityMapOfStringL$dynamic()).from(["handle", this[_handle$]]));
+    }
+  };
+  (firebase_ml_vision.FaceDetector.__ = function(options, _handle) {
+    this[_hasBeenOpened] = false;
+    this[_isClosed] = false;
+    this[options$0] = options;
+    this[_handle$] = _handle;
+    if (!(options != null)) dart.assertFailed(null, I[2], 59, 55, "options != null");
+    ;
+  }).prototype = firebase_ml_vision.FaceDetector.prototype;
+  dart.addTypeTests(firebase_ml_vision.FaceDetector);
+  dart.addTypeCaches(firebase_ml_vision.FaceDetector);
+  dart.setMethodSignature(firebase_ml_vision.FaceDetector, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.FaceDetector.__proto__),
+    processImage: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.List$(dart.legacy(firebase_ml_vision.Face))))), [dart.legacy(firebase_ml_vision.FirebaseVisionImage)]),
+    close: dart.fnType(dart.legacy(async.Future$(dart.void)), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.FaceDetector, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.FaceDetector, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.FaceDetector.__proto__),
+    options: dart.finalFieldType(dart.legacy(firebase_ml_vision.FaceDetectorOptions)),
+    [_handle$]: dart.finalFieldType(dart.legacy(core.int)),
+    [_hasBeenOpened]: dart.fieldType(dart.legacy(core.bool)),
+    [_isClosed]: dart.fieldType(dart.legacy(core.bool))
+  }));
+  var enableClassification$ = dart.privateName(firebase_ml_vision, "FaceDetectorOptions.enableClassification");
+  var enableLandmarks$ = dart.privateName(firebase_ml_vision, "FaceDetectorOptions.enableLandmarks");
+  var enableContours$ = dart.privateName(firebase_ml_vision, "FaceDetectorOptions.enableContours");
+  var enableTracking$ = dart.privateName(firebase_ml_vision, "FaceDetectorOptions.enableTracking");
+  var minFaceSize$ = dart.privateName(firebase_ml_vision, "FaceDetectorOptions.minFaceSize");
+  var mode$ = dart.privateName(firebase_ml_vision, "FaceDetectorOptions.mode");
+  firebase_ml_vision.FaceDetectorOptions = class FaceDetectorOptions extends core.Object {
+    get enableClassification() {
+      return this[enableClassification$];
+    }
+    set enableClassification(value) {
+      super.enableClassification = value;
+    }
+    get enableLandmarks() {
+      return this[enableLandmarks$];
+    }
+    set enableLandmarks(value) {
+      super.enableLandmarks = value;
+    }
+    get enableContours() {
+      return this[enableContours$];
+    }
+    set enableContours(value) {
+      super.enableContours = value;
+    }
+    get enableTracking() {
+      return this[enableTracking$];
+    }
+    set enableTracking(value) {
+      super.enableTracking = value;
+    }
+    get minFaceSize() {
+      return this[minFaceSize$];
+    }
+    set minFaceSize(value) {
+      super.minFaceSize = value;
+    }
+    get mode() {
+      return this[mode$];
+    }
+    set mode(value) {
+      super.mode = value;
+    }
+  };
+  (firebase_ml_vision.FaceDetectorOptions.new = function(opts) {
+    let enableClassification = opts && 'enableClassification' in opts ? opts.enableClassification : false;
+    let enableLandmarks = opts && 'enableLandmarks' in opts ? opts.enableLandmarks : false;
+    let enableContours = opts && 'enableContours' in opts ? opts.enableContours : false;
+    let enableTracking = opts && 'enableTracking' in opts ? opts.enableTracking : false;
+    let minFaceSize = opts && 'minFaceSize' in opts ? opts.minFaceSize : 0.1;
+    let mode = opts && 'mode' in opts ? opts.mode : C[49] || CT.C49;
+    this[enableClassification$] = enableClassification;
+    this[enableLandmarks$] = enableLandmarks;
+    this[enableContours$] = enableContours;
+    this[enableTracking$] = enableTracking;
+    this[minFaceSize$] = minFaceSize;
+    this[mode$] = mode;
+    if (!(dart.notNull(minFaceSize) >= 0.0)) dart.assertFailed(null, I[2], 124, 16, "minFaceSize >= 0.0");
+    if (!(dart.notNull(minFaceSize) <= 1.0)) dart.assertFailed(null, I[2], 125, 16, "minFaceSize <= 1.0");
+    ;
+  }).prototype = firebase_ml_vision.FaceDetectorOptions.prototype;
+  dart.addTypeTests(firebase_ml_vision.FaceDetectorOptions);
+  dart.addTypeCaches(firebase_ml_vision.FaceDetectorOptions);
+  dart.setLibraryUri(firebase_ml_vision.FaceDetectorOptions, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.FaceDetectorOptions, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.FaceDetectorOptions.__proto__),
+    enableClassification: dart.finalFieldType(dart.legacy(core.bool)),
+    enableLandmarks: dart.finalFieldType(dart.legacy(core.bool)),
+    enableContours: dart.finalFieldType(dart.legacy(core.bool)),
+    enableTracking: dart.finalFieldType(dart.legacy(core.bool)),
+    minFaceSize: dart.finalFieldType(dart.legacy(core.double)),
+    mode: dart.finalFieldType(dart.legacy(firebase_ml_vision.FaceDetectorMode))
+  }));
+  var boundingBox$ = dart.privateName(firebase_ml_vision, "Face.boundingBox");
+  var headEulerAngleY = dart.privateName(firebase_ml_vision, "Face.headEulerAngleY");
+  var headEulerAngleZ = dart.privateName(firebase_ml_vision, "Face.headEulerAngleZ");
+  var leftEyeOpenProbability = dart.privateName(firebase_ml_vision, "Face.leftEyeOpenProbability");
+  var rightEyeOpenProbability = dart.privateName(firebase_ml_vision, "Face.rightEyeOpenProbability");
+  var smilingProbability = dart.privateName(firebase_ml_vision, "Face.smilingProbability");
+  var trackingId = dart.privateName(firebase_ml_vision, "Face.trackingId");
+  var _landmarks = dart.privateName(firebase_ml_vision, "_landmarks");
+  var _contours = dart.privateName(firebase_ml_vision, "_contours");
+  firebase_ml_vision.Face = class Face extends core.Object {
+    get boundingBox() {
+      return this[boundingBox$];
+    }
+    set boundingBox(value) {
+      super.boundingBox = value;
+    }
+    get headEulerAngleY() {
+      return this[headEulerAngleY];
+    }
+    set headEulerAngleY(value) {
+      super.headEulerAngleY = value;
+    }
+    get headEulerAngleZ() {
+      return this[headEulerAngleZ];
+    }
+    set headEulerAngleZ(value) {
+      super.headEulerAngleZ = value;
+    }
+    get leftEyeOpenProbability() {
+      return this[leftEyeOpenProbability];
+    }
+    set leftEyeOpenProbability(value) {
+      super.leftEyeOpenProbability = value;
+    }
+    get rightEyeOpenProbability() {
+      return this[rightEyeOpenProbability];
+    }
+    set rightEyeOpenProbability(value) {
+      super.rightEyeOpenProbability = value;
+    }
+    get smilingProbability() {
+      return this[smilingProbability];
+    }
+    set smilingProbability(value) {
+      super.smilingProbability = value;
+    }
+    get trackingId() {
+      return this[trackingId];
+    }
+    set trackingId(value) {
+      super.trackingId = value;
+    }
+    getLandmark(landmark) {
+      return this[_landmarks][$_get](landmark);
+    }
+    getContour(contour) {
+      return this[_contours][$_get](contour);
+    }
+  };
+  (firebase_ml_vision.Face.__ = function(data) {
+    this[boundingBox$] = new ui.Rect.fromLTWH(core.double.as(dart.dsend(data, '_get', ["left"])), core.double.as(dart.dsend(data, '_get', ["top"])), core.double.as(dart.dsend(data, '_get', ["width"])), core.double.as(dart.dsend(data, '_get', ["height"])));
+    this[headEulerAngleY] = T.doubleL().as(dart.dsend(data, '_get', ["headEulerAngleY"]));
+    this[headEulerAngleZ] = T.doubleL().as(dart.dsend(data, '_get', ["headEulerAngleZ"]));
+    this[leftEyeOpenProbability] = T.doubleL().as(dart.dsend(data, '_get', ["leftEyeOpenProbability"]));
+    this[rightEyeOpenProbability] = T.doubleL().as(dart.dsend(data, '_get', ["rightEyeOpenProbability"]));
+    this[smilingProbability] = T.doubleL().as(dart.dsend(data, '_get', ["smilingProbability"]));
+    this[trackingId] = T.intL().as(dart.dsend(data, '_get', ["trackingId"]));
+    this[_landmarks] = T.LinkedHashMapOfFaceLandmarkTypeL$FaceLandmarkL().fromIterables(firebase_ml_vision.FaceLandmarkType.values, firebase_ml_vision.FaceLandmarkType.values[$map](T.FaceLandmarkL(), dart.fn(type => {
+      let pos = T.ListL().as(dart.dsend(dart.dsend(data, '_get', ["landmarks"]), '_get', [firebase_ml_vision._enumToString(type)]));
+      return pos == null ? null : new firebase_ml_vision.FaceLandmark.__(type, new ui.Offset.new(core.double.as(pos[$_get](0)), core.double.as(pos[$_get](1))));
+    }, T.FaceLandmarkTypeLToFaceLandmarkL())));
+    this[_contours] = T.LinkedHashMapOfFaceContourTypeL$FaceContourL().fromIterables(firebase_ml_vision.FaceContourType.values, firebase_ml_vision.FaceContourType.values[$map](T.FaceContourL(), dart.fn(type => {
+      let t0;
+      let arr = T.ListL().as(dart.dsend((t0 = dart.dsend(data, '_get', ["contours"]), t0 == null ? new (T.IdentityMapOfStringL$dynamic()).new() : t0), '_get', [firebase_ml_vision._enumToString(type)]));
+      return arr == null ? null : new firebase_ml_vision.FaceContour.__(type, arr[$map](T.OffsetL(), dart.fn(pos => new ui.Offset.new(core.double.as(dart.dsend(pos, '_get', [0])), core.double.as(dart.dsend(pos, '_get', [1]))), T.dynamicToOffsetL()))[$toList]());
+    }, T.FaceContourTypeLToFaceContourL())));
+    ;
+  }).prototype = firebase_ml_vision.Face.prototype;
+  dart.addTypeTests(firebase_ml_vision.Face);
+  dart.addTypeCaches(firebase_ml_vision.Face);
+  dart.setMethodSignature(firebase_ml_vision.Face, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.Face.__proto__),
+    getLandmark: dart.fnType(dart.legacy(firebase_ml_vision.FaceLandmark), [dart.legacy(firebase_ml_vision.FaceLandmarkType)]),
+    getContour: dart.fnType(dart.legacy(firebase_ml_vision.FaceContour), [dart.legacy(firebase_ml_vision.FaceContourType)])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.Face, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.Face, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.Face.__proto__),
+    [_landmarks]: dart.finalFieldType(dart.legacy(core.Map$(dart.legacy(firebase_ml_vision.FaceLandmarkType), dart.legacy(firebase_ml_vision.FaceLandmark)))),
+    [_contours]: dart.finalFieldType(dart.legacy(core.Map$(dart.legacy(firebase_ml_vision.FaceContourType), dart.legacy(firebase_ml_vision.FaceContour)))),
+    boundingBox: dart.finalFieldType(dart.legacy(ui.Rect)),
+    headEulerAngleY: dart.finalFieldType(dart.legacy(core.double)),
+    headEulerAngleZ: dart.finalFieldType(dart.legacy(core.double)),
+    leftEyeOpenProbability: dart.finalFieldType(dart.legacy(core.double)),
+    rightEyeOpenProbability: dart.finalFieldType(dart.legacy(core.double)),
+    smilingProbability: dart.finalFieldType(dart.legacy(core.double)),
+    trackingId: dart.finalFieldType(dart.legacy(core.int))
+  }));
+  var type$1 = dart.privateName(firebase_ml_vision, "FaceLandmark.type");
+  var position$ = dart.privateName(firebase_ml_vision, "FaceLandmark.position");
+  firebase_ml_vision.FaceLandmark = class FaceLandmark extends core.Object {
+    get type() {
+      return this[type$1];
+    }
+    set type(value) {
+      super.type = value;
+    }
+    get position() {
+      return this[position$];
+    }
+    set position(value) {
+      super.position = value;
+    }
+  };
+  (firebase_ml_vision.FaceLandmark.__ = function(type, position) {
+    this[type$1] = type;
+    this[position$] = position;
+    ;
+  }).prototype = firebase_ml_vision.FaceLandmark.prototype;
+  dart.addTypeTests(firebase_ml_vision.FaceLandmark);
+  dart.addTypeCaches(firebase_ml_vision.FaceLandmark);
+  dart.setLibraryUri(firebase_ml_vision.FaceLandmark, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.FaceLandmark, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.FaceLandmark.__proto__),
+    type: dart.finalFieldType(dart.legacy(firebase_ml_vision.FaceLandmarkType)),
+    position: dart.finalFieldType(dart.legacy(ui.Offset))
+  }));
+  var type$2 = dart.privateName(firebase_ml_vision, "FaceContour.type");
+  var positionsList$ = dart.privateName(firebase_ml_vision, "FaceContour.positionsList");
+  firebase_ml_vision.FaceContour = class FaceContour extends core.Object {
+    get type() {
+      return this[type$2];
+    }
+    set type(value) {
+      super.type = value;
+    }
+    get positionsList() {
+      return this[positionsList$];
+    }
+    set positionsList(value) {
+      super.positionsList = value;
+    }
+  };
+  (firebase_ml_vision.FaceContour.__ = function(type, positionsList) {
+    this[type$2] = type;
+    this[positionsList$] = positionsList;
+    ;
+  }).prototype = firebase_ml_vision.FaceContour.prototype;
+  dart.addTypeTests(firebase_ml_vision.FaceContour);
+  dart.addTypeCaches(firebase_ml_vision.FaceContour);
+  dart.setLibraryUri(firebase_ml_vision.FaceContour, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.FaceContour, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.FaceContour.__proto__),
+    type: dart.finalFieldType(dart.legacy(firebase_ml_vision.FaceContourType)),
+    positionsList: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(ui.Offset))))
+  }));
+  firebase_ml_vision._ImageType = class _ImageType extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (firebase_ml_vision._ImageType.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = firebase_ml_vision._ImageType.prototype;
+  dart.addTypeTests(firebase_ml_vision._ImageType);
+  dart.addTypeCaches(firebase_ml_vision._ImageType);
+  dart.setMethodSignature(firebase_ml_vision._ImageType, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision._ImageType.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision._ImageType, I[0]);
+  dart.setFieldSignature(firebase_ml_vision._ImageType, () => ({
+    __proto__: dart.getFields(firebase_ml_vision._ImageType.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(firebase_ml_vision._ImageType, ['toString']);
+  firebase_ml_vision._ImageType.file = C[77] || CT.C77;
+  firebase_ml_vision._ImageType.bytes = C[78] || CT.C78;
+  firebase_ml_vision._ImageType.values = C[79] || CT.C79;
+  firebase_ml_vision.ImageRotation = class ImageRotation extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (firebase_ml_vision.ImageRotation.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = firebase_ml_vision.ImageRotation.prototype;
+  dart.addTypeTests(firebase_ml_vision.ImageRotation);
+  dart.addTypeCaches(firebase_ml_vision.ImageRotation);
+  dart.setMethodSignature(firebase_ml_vision.ImageRotation, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.ImageRotation.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.ImageRotation, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.ImageRotation, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.ImageRotation.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(firebase_ml_vision.ImageRotation, ['toString']);
+  firebase_ml_vision.ImageRotation.rotation0 = C[80] || CT.C80;
+  firebase_ml_vision.ImageRotation.rotation90 = C[81] || CT.C81;
+  firebase_ml_vision.ImageRotation.rotation180 = C[82] || CT.C82;
+  firebase_ml_vision.ImageRotation.rotation270 = C[83] || CT.C83;
+  firebase_ml_vision.ImageRotation.values = C[84] || CT.C84;
+  firebase_ml_vision.ModelType = class ModelType extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (firebase_ml_vision.ModelType.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = firebase_ml_vision.ModelType.prototype;
+  dart.addTypeTests(firebase_ml_vision.ModelType);
+  dart.addTypeCaches(firebase_ml_vision.ModelType);
+  dart.setMethodSignature(firebase_ml_vision.ModelType, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.ModelType.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.ModelType, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.ModelType, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.ModelType.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(firebase_ml_vision.ModelType, ['toString']);
+  firebase_ml_vision.ModelType.onDevice = C[85] || CT.C85;
+  firebase_ml_vision.ModelType.cloud = C[86] || CT.C86;
+  firebase_ml_vision.ModelType.values = C[87] || CT.C87;
+  var languageCode = dart.privateName(firebase_ml_vision, "RecognizedLanguage.languageCode");
+  firebase_ml_vision.RecognizedLanguage = class RecognizedLanguage extends core.Object {
+    get languageCode() {
+      return this[languageCode];
+    }
+    set languageCode(value) {
+      super.languageCode = value;
+    }
+  };
+  (firebase_ml_vision.RecognizedLanguage.__ = function(data) {
+    this[languageCode] = T.StringL().as(dart.dsend(data, '_get', ["languageCode"]));
+    ;
+  }).prototype = firebase_ml_vision.RecognizedLanguage.prototype;
+  dart.addTypeTests(firebase_ml_vision.RecognizedLanguage);
+  dart.addTypeCaches(firebase_ml_vision.RecognizedLanguage);
+  dart.setLibraryUri(firebase_ml_vision.RecognizedLanguage, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.RecognizedLanguage, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.RecognizedLanguage.__proto__),
+    languageCode: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var ImageLabelerOptions_confidenceThreshold = dart.privateName(firebase_ml_vision, "ImageLabelerOptions.confidenceThreshold");
+  var CloudImageLabelerOptions_confidenceThreshold = dart.privateName(firebase_ml_vision, "CloudImageLabelerOptions.confidenceThreshold");
+  var CloudTextRecognizerOptions_textModelType = dart.privateName(firebase_ml_vision, "CloudTextRecognizerOptions.textModelType");
+  var CloudTextRecognizerOptions_hintedLanguages = dart.privateName(firebase_ml_vision, "CloudTextRecognizerOptions.hintedLanguages");
+  var CloudDocumentRecognizerOptions_hintedLanguages = dart.privateName(firebase_ml_vision, "CloudDocumentRecognizerOptions.hintedLanguages");
+  var MethodChannel__binaryMessenger = dart.privateName(platform_channel, "MethodChannel._binaryMessenger");
+  var StandardMethodCodec_messageCodec = dart.privateName(message_codecs, "StandardMethodCodec.messageCodec");
+  var MethodChannel_codec = dart.privateName(platform_channel, "MethodChannel.codec");
+  var MethodChannel_name = dart.privateName(platform_channel, "MethodChannel.name");
+  firebase_ml_vision.FirebaseVision = class FirebaseVision extends core.Object {
+    barcodeDetector(options = null) {
+      let t0, t0$;
+      return new firebase_ml_vision.BarcodeDetector.__((t0 = options, t0 == null ? C[88] || CT.C88 : t0), (t0$ = firebase_ml_vision.FirebaseVision.nextHandle, firebase_ml_vision.FirebaseVision.nextHandle = dart.notNull(t0$) + 1, t0$));
+    }
+    faceDetector(options = null) {
+      let t0, t0$;
+      return new firebase_ml_vision.FaceDetector.__((t0 = options, t0 == null ? C[89] || CT.C89 : t0), (t0$ = firebase_ml_vision.FirebaseVision.nextHandle, firebase_ml_vision.FirebaseVision.nextHandle = dart.notNull(t0$) + 1, t0$));
+    }
+    imageLabeler(options = null) {
+      let t0, t0$;
+      return new firebase_ml_vision.ImageLabeler.__({options: (t0 = options, t0 == null ? C[90] || CT.C90 : t0), modelType: firebase_ml_vision.ModelType.onDevice, handle: (t0$ = firebase_ml_vision.FirebaseVision.nextHandle, firebase_ml_vision.FirebaseVision.nextHandle = dart.notNull(t0$) + 1, t0$)});
+    }
+    textRecognizer() {
+      let t0;
+      return new firebase_ml_vision.TextRecognizer.__({modelType: firebase_ml_vision.ModelType.onDevice, handle: (t0 = firebase_ml_vision.FirebaseVision.nextHandle, firebase_ml_vision.FirebaseVision.nextHandle = dart.notNull(t0) + 1, t0)});
+    }
+    cloudImageLabeler(options = null) {
+      let t0, t0$;
+      return new firebase_ml_vision.ImageLabeler.__({options: (t0 = options, t0 == null ? C[91] || CT.C91 : t0), modelType: firebase_ml_vision.ModelType.cloud, handle: (t0$ = firebase_ml_vision.FirebaseVision.nextHandle, firebase_ml_vision.FirebaseVision.nextHandle = dart.notNull(t0$) + 1, t0$)});
+    }
+    cloudTextRecognizer(cloudOptions = null) {
+      let t0, t0$;
+      return new firebase_ml_vision.TextRecognizer.__({cloudOptions: (t0 = cloudOptions, t0 == null ? C[92] || CT.C92 : t0), modelType: firebase_ml_vision.ModelType.cloud, handle: (t0$ = firebase_ml_vision.FirebaseVision.nextHandle, firebase_ml_vision.FirebaseVision.nextHandle = dart.notNull(t0$) + 1, t0$)});
+    }
+    cloudDocumentTextRecognizer(cloudOptions = null) {
+      let t0, t0$;
+      return new firebase_ml_vision.DocumentTextRecognizer.__({cloudOptions: (t0 = cloudOptions, t0 == null ? C[94] || CT.C94 : t0), handle: (t0$ = firebase_ml_vision.FirebaseVision.nextHandle, firebase_ml_vision.FirebaseVision.nextHandle = dart.notNull(t0$) + 1, t0$)});
+    }
+  };
+  (firebase_ml_vision.FirebaseVision.__ = function() {
+    ;
+  }).prototype = firebase_ml_vision.FirebaseVision.prototype;
+  dart.addTypeTests(firebase_ml_vision.FirebaseVision);
+  dart.addTypeCaches(firebase_ml_vision.FirebaseVision);
+  dart.setMethodSignature(firebase_ml_vision.FirebaseVision, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.FirebaseVision.__proto__),
+    barcodeDetector: dart.fnType(dart.legacy(firebase_ml_vision.BarcodeDetector), [], [dart.legacy(firebase_ml_vision.BarcodeDetectorOptions)]),
+    faceDetector: dart.fnType(dart.legacy(firebase_ml_vision.FaceDetector), [], [dart.legacy(firebase_ml_vision.FaceDetectorOptions)]),
+    imageLabeler: dart.fnType(dart.legacy(firebase_ml_vision.ImageLabeler), [], [dart.legacy(firebase_ml_vision.ImageLabelerOptions)]),
+    textRecognizer: dart.fnType(dart.legacy(firebase_ml_vision.TextRecognizer), []),
+    cloudImageLabeler: dart.fnType(dart.legacy(firebase_ml_vision.ImageLabeler), [], [dart.legacy(firebase_ml_vision.CloudImageLabelerOptions)]),
+    cloudTextRecognizer: dart.fnType(dart.legacy(firebase_ml_vision.TextRecognizer), [], [dart.legacy(firebase_ml_vision.CloudTextRecognizerOptions)]),
+    cloudDocumentTextRecognizer: dart.fnType(dart.legacy(firebase_ml_vision.DocumentTextRecognizer), [], [dart.legacy(firebase_ml_vision.CloudDocumentRecognizerOptions)])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.FirebaseVision, I[0]);
+  dart.defineLazy(firebase_ml_vision.FirebaseVision, {
+    /*firebase_ml_vision.FirebaseVision.channel*/get channel() {
+      return C[95] || CT.C95;
+    },
+    /*firebase_ml_vision.FirebaseVision.nextHandle*/get nextHandle() {
+      return 0;
+    },
+    set nextHandle(_) {},
+    /*firebase_ml_vision.FirebaseVision.instance*/get instance() {
+      return new firebase_ml_vision.FirebaseVision.__();
+    }
+  }, true);
+  var _imageFile = dart.privateName(firebase_ml_vision, "_imageFile");
+  var _metadata = dart.privateName(firebase_ml_vision, "_metadata");
+  var _bytes = dart.privateName(firebase_ml_vision, "_bytes");
+  var _type = dart.privateName(firebase_ml_vision, "_type");
+  firebase_ml_vision.FirebaseVisionImage = class FirebaseVisionImage extends core.Object {
+    static fromFile(imageFile) {
+      if (!(imageFile != null)) dart.assertFailed(null, I[3], 131, 12, "imageFile != null");
+      return new firebase_ml_vision.FirebaseVisionImage.__({type: firebase_ml_vision._ImageType.file, imageFile: imageFile});
+    }
+    static fromFilePath(imagePath) {
+      if (!(imagePath != null)) dart.assertFailed(null, I[3], 140, 12, "imagePath != null");
+      return new firebase_ml_vision.FirebaseVisionImage.__({type: firebase_ml_vision._ImageType.file, imageFile: io.File.new(imagePath)});
+    }
+    static fromBytes(bytes, metadata) {
+      if (!(bytes != null)) dart.assertFailed(null, I[3], 159, 12, "bytes != null");
+      if (!(metadata != null)) dart.assertFailed(null, I[3], 160, 12, "metadata != null");
+      return new firebase_ml_vision.FirebaseVisionImage.__({type: firebase_ml_vision._ImageType.bytes, bytes: bytes, metadata: metadata});
+    }
+    [_serialize]() {
+      let t0;
+      return new (T.IdentityMapOfStringL$dynamic()).from(["type", firebase_ml_vision._enumToString(this[_type]), "bytes", this[_bytes], "path", (t0 = this[_imageFile], t0 == null ? null : t0.path), "metadata", this[_type] == firebase_ml_vision._ImageType.bytes ? this[_metadata][_serialize]() : null]);
+    }
+  };
+  (firebase_ml_vision.FirebaseVisionImage.__ = function(opts) {
+    let type = opts && 'type' in opts ? opts.type : null;
+    let metadata = opts && 'metadata' in opts ? opts.metadata : null;
+    let imageFile = opts && 'imageFile' in opts ? opts.imageFile : null;
+    let bytes = opts && 'bytes' in opts ? opts.bytes : null;
+    this[_imageFile] = imageFile;
+    this[_metadata] = metadata;
+    this[_bytes] = bytes;
+    this[_type] = type;
+    ;
+  }).prototype = firebase_ml_vision.FirebaseVisionImage.prototype;
+  dart.addTypeTests(firebase_ml_vision.FirebaseVisionImage);
+  dart.addTypeCaches(firebase_ml_vision.FirebaseVisionImage);
+  dart.setMethodSignature(firebase_ml_vision.FirebaseVisionImage, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.FirebaseVisionImage.__proto__),
+    [_serialize]: dart.fnType(dart.legacy(core.Map$(dart.legacy(core.String), dart.dynamic)), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.FirebaseVisionImage, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.FirebaseVisionImage, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.FirebaseVisionImage.__proto__),
+    [_bytes]: dart.finalFieldType(dart.legacy(typed_data.Uint8List)),
+    [_imageFile]: dart.finalFieldType(dart.legacy(io.File)),
+    [_metadata]: dart.finalFieldType(dart.legacy(firebase_ml_vision.FirebaseVisionImageMetadata)),
+    [_type]: dart.finalFieldType(dart.legacy(firebase_ml_vision._ImageType))
+  }));
+  var bytesPerRow$ = dart.privateName(firebase_ml_vision, "FirebaseVisionImagePlaneMetadata.bytesPerRow");
+  var height$ = dart.privateName(firebase_ml_vision, "FirebaseVisionImagePlaneMetadata.height");
+  var width$ = dart.privateName(firebase_ml_vision, "FirebaseVisionImagePlaneMetadata.width");
+  firebase_ml_vision.FirebaseVisionImagePlaneMetadata = class FirebaseVisionImagePlaneMetadata extends core.Object {
+    get bytesPerRow() {
+      return this[bytesPerRow$];
+    }
+    set bytesPerRow(value) {
+      super.bytesPerRow = value;
+    }
+    get height() {
+      return this[height$];
+    }
+    set height(value) {
+      super.height = value;
+    }
+    get width() {
+      return this[width$];
+    }
+    set width(value) {
+      super.width = value;
+    }
+    [_serialize]() {
+      return new (T.IdentityMapOfStringL$dynamic()).from(["bytesPerRow", this.bytesPerRow, "height", this.height, "width", this.width]);
+    }
+  };
+  (firebase_ml_vision.FirebaseVisionImagePlaneMetadata.new = function(opts) {
+    let bytesPerRow = opts && 'bytesPerRow' in opts ? opts.bytesPerRow : null;
+    let height = opts && 'height' in opts ? opts.height : null;
+    let width = opts && 'width' in opts ? opts.width : null;
+    this[bytesPerRow$] = bytesPerRow;
+    this[height$] = height;
+    this[width$] = width;
+    if (!(platform.defaultTargetPlatform == platform.TargetPlatform.iOS ? bytesPerRow != null : true)) dart.assertFailed(null, I[3], 190, 16, "defaultTargetPlatform == TargetPlatform.iOS\n            ? bytesPerRow != null\n            : true");
+    if (!(platform.defaultTargetPlatform == platform.TargetPlatform.iOS ? height != null : true)) dart.assertFailed(null, I[3], 193, 16, "defaultTargetPlatform == TargetPlatform.iOS\n            ? height != null\n            : true");
+    if (!(platform.defaultTargetPlatform == platform.TargetPlatform.iOS ? width != null : true)) dart.assertFailed(null, I[3], 197, 13, "defaultTargetPlatform == TargetPlatform.iOS ? width != null : true");
+    ;
+  }).prototype = firebase_ml_vision.FirebaseVisionImagePlaneMetadata.prototype;
+  dart.addTypeTests(firebase_ml_vision.FirebaseVisionImagePlaneMetadata);
+  dart.addTypeCaches(firebase_ml_vision.FirebaseVisionImagePlaneMetadata);
+  dart.setMethodSignature(firebase_ml_vision.FirebaseVisionImagePlaneMetadata, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.FirebaseVisionImagePlaneMetadata.__proto__),
+    [_serialize]: dart.fnType(dart.legacy(core.Map$(dart.legacy(core.String), dart.dynamic)), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.FirebaseVisionImagePlaneMetadata, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.FirebaseVisionImagePlaneMetadata, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.FirebaseVisionImagePlaneMetadata.__proto__),
+    bytesPerRow: dart.finalFieldType(dart.legacy(core.int)),
+    height: dart.finalFieldType(dart.legacy(core.int)),
+    width: dart.finalFieldType(dart.legacy(core.int))
+  }));
+  var size$ = dart.privateName(firebase_ml_vision, "FirebaseVisionImageMetadata.size");
+  var rotation$ = dart.privateName(firebase_ml_vision, "FirebaseVisionImageMetadata.rotation");
+  var rawFormat$ = dart.privateName(firebase_ml_vision, "FirebaseVisionImageMetadata.rawFormat");
+  var planeData$ = dart.privateName(firebase_ml_vision, "FirebaseVisionImageMetadata.planeData");
+  var _imageRotationToInt = dart.privateName(firebase_ml_vision, "_imageRotationToInt");
+  firebase_ml_vision.FirebaseVisionImageMetadata = class FirebaseVisionImageMetadata extends core.Object {
+    get size() {
+      return this[size$];
+    }
+    set size(value) {
+      super.size = value;
+    }
+    get rotation() {
+      return this[rotation$];
+    }
+    set rotation(value) {
+      super.rotation = value;
+    }
+    get rawFormat() {
+      return this[rawFormat$];
+    }
+    set rawFormat(value) {
+      super.rawFormat = value;
+    }
+    get planeData() {
+      return this[planeData$];
+    }
+    set planeData(value) {
+      super.planeData = value;
+    }
+    [_imageRotationToInt](rotation) {
+      switch (rotation) {
+        case C[81] || CT.C81:
+        {
+          return 90;
+        }
+        case C[82] || CT.C82:
+        {
+          return 180;
+        }
+        case C[83] || CT.C83:
+        {
+          return 270;
+        }
+        default:
+        {
+          if (!(rotation == firebase_ml_vision.ImageRotation.rotation0)) dart.assertFailed(null, I[3], 272, 16, "rotation == ImageRotation.rotation0");
+          return 0;
+        }
+      }
+    }
+    [_serialize]() {
+      return new (T.IdentityMapOfStringL$dynamic()).from(["width", this.size.width, "height", this.size.height, "rotation", this[_imageRotationToInt](this.rotation), "rawFormat", this.rawFormat, "planeData", this.planeData[$map](T.MapLOfStringL$dynamic(), dart.fn(plane => plane[_serialize](), T.FirebaseVisionImagePlaneMetadataLToMapLOfStringL$dynamic()))[$toList]()]);
+    }
+  };
+  (firebase_ml_vision.FirebaseVisionImageMetadata.new = function(opts) {
+    let size = opts && 'size' in opts ? opts.size : null;
+    let rawFormat = opts && 'rawFormat' in opts ? opts.rawFormat : null;
+    let planeData = opts && 'planeData' in opts ? opts.planeData : null;
+    let rotation = opts && 'rotation' in opts ? opts.rotation : C[80] || CT.C80;
+    this[size$] = size;
+    this[rawFormat$] = rawFormat;
+    this[planeData$] = planeData;
+    this[rotation$] = rotation;
+    if (!(size != null)) dart.assertFailed(null, I[3], 228, 16, "size != null");
+    if (!(platform.defaultTargetPlatform == platform.TargetPlatform.iOS ? rawFormat != null : true)) dart.assertFailed(null, I[3], 229, 16, "defaultTargetPlatform == TargetPlatform.iOS\n            ? rawFormat != null\n            : true");
+    if (!(platform.defaultTargetPlatform == platform.TargetPlatform.iOS ? planeData != null : true)) dart.assertFailed(null, I[3], 232, 16, "defaultTargetPlatform == TargetPlatform.iOS\n            ? planeData != null\n            : true");
+    if (!dart.test(platform.defaultTargetPlatform == platform.TargetPlatform.iOS ? planeData[$isNotEmpty] : true)) dart.assertFailed(null, I[3], 235, 16, "defaultTargetPlatform == TargetPlatform.iOS\n            ? planeData.isNotEmpty\n            : true");
+    ;
+  }).prototype = firebase_ml_vision.FirebaseVisionImageMetadata.prototype;
+  dart.addTypeTests(firebase_ml_vision.FirebaseVisionImageMetadata);
+  dart.addTypeCaches(firebase_ml_vision.FirebaseVisionImageMetadata);
+  dart.setMethodSignature(firebase_ml_vision.FirebaseVisionImageMetadata, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.FirebaseVisionImageMetadata.__proto__),
+    [_imageRotationToInt]: dart.fnType(dart.legacy(core.int), [dart.legacy(firebase_ml_vision.ImageRotation)]),
+    [_serialize]: dart.fnType(dart.legacy(core.Map$(dart.legacy(core.String), dart.dynamic)), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.FirebaseVisionImageMetadata, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.FirebaseVisionImageMetadata, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.FirebaseVisionImageMetadata.__proto__),
+    size: dart.finalFieldType(dart.legacy(ui.Size)),
+    rotation: dart.finalFieldType(dart.legacy(firebase_ml_vision.ImageRotation)),
+    rawFormat: dart.finalFieldType(dart.dynamic),
+    planeData: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(firebase_ml_vision.FirebaseVisionImagePlaneMetadata))))
+  }));
+  var modelType$ = dart.privateName(firebase_ml_vision, "ImageLabeler.modelType");
+  var _options = dart.privateName(firebase_ml_vision, "_options");
+  firebase_ml_vision.ImageLabeler = class ImageLabeler extends core.Object {
+    get modelType() {
+      return this[modelType$];
+    }
+    set modelType(value) {
+      super.modelType = value;
+    }
+    processImage(visionImage) {
+      return async.async(T.ListLOfImageLabelL(), (function* processImage() {
+        let t0;
+        if (!!dart.test(this[_isClosed])) dart.assertFailed(null, I[4], 49, 12, "!_isClosed");
+        this[_hasBeenOpened] = true;
+        let reply = (yield firebase_ml_vision.FirebaseVision.channel.invokeListMethod(dart.dynamic, "ImageLabeler#processImage", (t0 = new (T.IdentityMapOfStringL$dynamic()).from(["handle", this[_handle$], "options", new (T.IdentityMapOfStringL$dynamic()).from(["modelType", firebase_ml_vision._enumToString(this.modelType), "confidenceThreshold", dart.dload(this[_options], 'confidenceThreshold')])]), (() => {
+          t0[$addAll](visionImage[_serialize]());
+          return t0;
+        })())));
+        let labels = T.JSArrayOfImageLabelL().of([]);
+        for (let data of reply) {
+          labels[$add](new firebase_ml_vision.ImageLabel.__(data));
+        }
+        return labels;
+      }).bind(this));
+    }
+    close() {
+      if (!dart.test(this[_hasBeenOpened])) this[_isClosed] = true;
+      if (dart.test(this[_isClosed])) return T.FutureOfvoid().value(null);
+      this[_isClosed] = true;
+      return firebase_ml_vision.FirebaseVision.channel.invokeMethod(dart.void, "ImageLabeler#close", new (T.IdentityMapOfStringL$dynamic()).from(["handle", this[_handle$]]));
+    }
+  };
+  (firebase_ml_vision.ImageLabeler.__ = function(opts) {
+    let options = opts && 'options' in opts ? opts.options : null;
+    let modelType = opts && 'modelType' in opts ? opts.modelType : null;
+    let handle = opts && 'handle' in opts ? opts.handle : null;
+    this[_hasBeenOpened] = false;
+    this[_isClosed] = false;
+    this[modelType$] = modelType;
+    this[_options] = options;
+    this[_handle$] = handle;
+    if (!(options != null)) dart.assertFailed(null, I[4], 35, 16, "options != null");
+    if (!(modelType != null)) dart.assertFailed(null, I[4], 36, 16, "modelType != null");
+    ;
+  }).prototype = firebase_ml_vision.ImageLabeler.prototype;
+  dart.addTypeTests(firebase_ml_vision.ImageLabeler);
+  dart.addTypeCaches(firebase_ml_vision.ImageLabeler);
+  dart.setMethodSignature(firebase_ml_vision.ImageLabeler, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.ImageLabeler.__proto__),
+    processImage: dart.fnType(dart.legacy(async.Future$(dart.legacy(core.List$(dart.legacy(firebase_ml_vision.ImageLabel))))), [dart.legacy(firebase_ml_vision.FirebaseVisionImage)]),
+    close: dart.fnType(dart.legacy(async.Future$(dart.void)), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.ImageLabeler, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.ImageLabeler, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.ImageLabeler.__proto__),
+    modelType: dart.finalFieldType(dart.legacy(firebase_ml_vision.ModelType)),
+    [_options]: dart.finalFieldType(dart.dynamic),
+    [_handle$]: dart.finalFieldType(dart.legacy(core.int)),
+    [_hasBeenOpened]: dart.fieldType(dart.legacy(core.bool)),
+    [_isClosed]: dart.fieldType(dart.legacy(core.bool))
+  }));
+  const confidenceThreshold$ = ImageLabelerOptions_confidenceThreshold;
+  firebase_ml_vision.ImageLabelerOptions = class ImageLabelerOptions extends core.Object {
+    get confidenceThreshold() {
+      return this[confidenceThreshold$];
+    }
+    set confidenceThreshold(value) {
+      super.confidenceThreshold = value;
+    }
+  };
+  (firebase_ml_vision.ImageLabelerOptions.new = function(opts) {
+    let confidenceThreshold = opts && 'confidenceThreshold' in opts ? opts.confidenceThreshold : 0.5;
+    this[confidenceThreshold$] = confidenceThreshold;
+    if (!(dart.notNull(confidenceThreshold) >= 0.0)) dart.assertFailed(null, I[4], 97, 16, "confidenceThreshold >= 0.0");
+    if (!(dart.notNull(confidenceThreshold) <= 1.0)) dart.assertFailed(null, I[4], 98, 16, "confidenceThreshold <= 1.0");
+    ;
+  }).prototype = firebase_ml_vision.ImageLabelerOptions.prototype;
+  dart.addTypeTests(firebase_ml_vision.ImageLabelerOptions);
+  dart.addTypeCaches(firebase_ml_vision.ImageLabelerOptions);
+  dart.setLibraryUri(firebase_ml_vision.ImageLabelerOptions, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.ImageLabelerOptions, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.ImageLabelerOptions.__proto__),
+    confidenceThreshold: dart.finalFieldType(dart.legacy(core.double))
+  }));
+  const confidenceThreshold$0 = CloudImageLabelerOptions_confidenceThreshold;
+  firebase_ml_vision.CloudImageLabelerOptions = class CloudImageLabelerOptions extends core.Object {
+    get confidenceThreshold() {
+      return this[confidenceThreshold$0];
+    }
+    set confidenceThreshold(value) {
+      super.confidenceThreshold = value;
+    }
+  };
+  (firebase_ml_vision.CloudImageLabelerOptions.new = function(opts) {
+    let confidenceThreshold = opts && 'confidenceThreshold' in opts ? opts.confidenceThreshold : 0.5;
+    this[confidenceThreshold$0] = confidenceThreshold;
+    if (!(dart.notNull(confidenceThreshold) >= 0.0)) dart.assertFailed(null, I[4], 118, 16, "confidenceThreshold >= 0.0");
+    if (!(dart.notNull(confidenceThreshold) <= 1.0)) dart.assertFailed(null, I[4], 119, 16, "confidenceThreshold <= 1.0");
+    ;
+  }).prototype = firebase_ml_vision.CloudImageLabelerOptions.prototype;
+  dart.addTypeTests(firebase_ml_vision.CloudImageLabelerOptions);
+  dart.addTypeCaches(firebase_ml_vision.CloudImageLabelerOptions);
+  dart.setLibraryUri(firebase_ml_vision.CloudImageLabelerOptions, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.CloudImageLabelerOptions, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.CloudImageLabelerOptions.__proto__),
+    confidenceThreshold: dart.finalFieldType(dart.legacy(core.double))
+  }));
+  var confidence = dart.privateName(firebase_ml_vision, "ImageLabel.confidence");
+  var entityId = dart.privateName(firebase_ml_vision, "ImageLabel.entityId");
+  var text = dart.privateName(firebase_ml_vision, "ImageLabel.text");
+  firebase_ml_vision.ImageLabel = class ImageLabel extends core.Object {
+    get confidence() {
+      return this[confidence];
+    }
+    set confidence(value) {
+      super.confidence = value;
+    }
+    get entityId() {
+      return this[entityId];
+    }
+    set entityId(value) {
+      super.entityId = value;
+    }
+    get text() {
+      return this[text];
+    }
+    set text(value) {
+      super.text = value;
+    }
+  };
+  (firebase_ml_vision.ImageLabel.__ = function(data) {
+    this[confidence] = T.doubleL().as(dart.dsend(data, '_get', ["confidence"]) == null ? null : dart.dsend(dart.dsend(data, '_get', ["confidence"]), 'toDouble', []));
+    this[entityId] = T.StringL().as(dart.dsend(data, '_get', ["entityId"]));
+    this[text] = T.StringL().as(dart.dsend(data, '_get', ["text"]));
+    ;
+  }).prototype = firebase_ml_vision.ImageLabel.prototype;
+  dart.addTypeTests(firebase_ml_vision.ImageLabel);
+  dart.addTypeCaches(firebase_ml_vision.ImageLabel);
+  dart.setLibraryUri(firebase_ml_vision.ImageLabel, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.ImageLabel, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.ImageLabel.__proto__),
+    confidence: dart.finalFieldType(dart.legacy(core.double)),
+    entityId: dart.finalFieldType(dart.legacy(core.String)),
+    text: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  firebase_ml_vision.CloudTextModelType = class CloudTextModelType extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (firebase_ml_vision.CloudTextModelType.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = firebase_ml_vision.CloudTextModelType.prototype;
+  dart.addTypeTests(firebase_ml_vision.CloudTextModelType);
+  dart.addTypeCaches(firebase_ml_vision.CloudTextModelType);
+  dart.setMethodSignature(firebase_ml_vision.CloudTextModelType, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.CloudTextModelType.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.CloudTextModelType, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.CloudTextModelType, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.CloudTextModelType.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(firebase_ml_vision.CloudTextModelType, ['toString']);
+  firebase_ml_vision.CloudTextModelType.sparse = C[93] || CT.C93;
+  firebase_ml_vision.CloudTextModelType.dense = C[98] || CT.C98;
+  firebase_ml_vision.CloudTextModelType.values = C[99] || CT.C99;
+  var modelType$0 = dart.privateName(firebase_ml_vision, "TextRecognizer.modelType");
+  var _cloudOptions = dart.privateName(firebase_ml_vision, "_cloudOptions");
+  firebase_ml_vision.TextRecognizer = class TextRecognizer extends core.Object {
+    get modelType() {
+      return this[modelType$0];
+    }
+    set modelType(value) {
+      super.modelType = value;
+    }
+    processImage(visionImage) {
+      return async.async(T.VisionTextL(), (function* processImage() {
+        let t0;
+        if (!!dart.test(this[_isClosed])) dart.assertFailed(null, I[5], 47, 12, "!_isClosed");
+        if (!(visionImage != null)) dart.assertFailed(null, I[5], 48, 12, "visionImage != null");
+        this[_hasBeenOpened] = true;
+        let options = new (T.IdentityMapOfStringL$dynamic()).from(["modelType", firebase_ml_vision._enumToString(this.modelType)]);
+        if (this[_cloudOptions] != null) {
+          options[$addAll](new (T.IdentityMapOfStringL$dynamic()).from(["hintedLanguages", this[_cloudOptions].hintedLanguages, "textModelType", firebase_ml_vision._enumToString(this[_cloudOptions].textModelType)]));
+        }
+        let reply = (yield firebase_ml_vision.FirebaseVision.channel.invokeMapMethod(T.StringL(), dart.dynamic, "TextRecognizer#processImage", (t0 = new (T.IdentityMapOfStringL$dynamic()).from(["handle", this[_handle$], "options", options]), (() => {
+          t0[$addAll](visionImage[_serialize]());
+          return t0;
+        })())));
+        return new firebase_ml_vision.VisionText.__(reply);
+      }).bind(this));
+    }
+    close() {
+      if (!dart.test(this[_hasBeenOpened])) this[_isClosed] = true;
+      if (dart.test(this[_isClosed])) return T.FutureOfvoid().value(null);
+      this[_isClosed] = true;
+      return firebase_ml_vision.FirebaseVision.channel.invokeMethod(dart.void, "TextRecognizer#close", new (T.IdentityMapOfStringL$dynamic()).from(["handle", this[_handle$]]));
+    }
+  };
+  (firebase_ml_vision.TextRecognizer.__ = function(opts) {
+    let cloudOptions = opts && 'cloudOptions' in opts ? opts.cloudOptions : null;
+    let modelType = opts && 'modelType' in opts ? opts.modelType : null;
+    let handle = opts && 'handle' in opts ? opts.handle : null;
+    this[_hasBeenOpened] = false;
+    this[_isClosed] = false;
+    this[modelType$0] = modelType;
+    this[_cloudOptions] = cloudOptions;
+    this[_handle$] = handle;
+    if (!(modelType != null)) dart.assertFailed(null, I[5], 38, 16, "modelType != null");
+    if (!(modelType == firebase_ml_vision.ModelType.cloud && cloudOptions != null || modelType == firebase_ml_vision.ModelType.onDevice && cloudOptions == null)) dart.assertFailed(null, I[5], 39, 16, "(modelType == ModelType.cloud && cloudOptions != null) ||\n            (modelType == ModelType.onDevice && cloudOptions == null)");
+    ;
+  }).prototype = firebase_ml_vision.TextRecognizer.prototype;
+  dart.addTypeTests(firebase_ml_vision.TextRecognizer);
+  dart.addTypeCaches(firebase_ml_vision.TextRecognizer);
+  dart.setMethodSignature(firebase_ml_vision.TextRecognizer, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.TextRecognizer.__proto__),
+    processImage: dart.fnType(dart.legacy(async.Future$(dart.legacy(firebase_ml_vision.VisionText))), [dart.legacy(firebase_ml_vision.FirebaseVisionImage)]),
+    close: dart.fnType(dart.legacy(async.Future$(dart.void)), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.TextRecognizer, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.TextRecognizer, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.TextRecognizer.__proto__),
+    modelType: dart.finalFieldType(dart.legacy(firebase_ml_vision.ModelType)),
+    [_cloudOptions]: dart.finalFieldType(dart.legacy(firebase_ml_vision.CloudTextRecognizerOptions)),
+    [_handle$]: dart.finalFieldType(dart.legacy(core.int)),
+    [_hasBeenOpened]: dart.fieldType(dart.legacy(core.bool)),
+    [_isClosed]: dart.fieldType(dart.legacy(core.bool))
+  }));
+  const hintedLanguages$ = CloudTextRecognizerOptions_hintedLanguages;
+  const textModelType$ = CloudTextRecognizerOptions_textModelType;
+  firebase_ml_vision.CloudTextRecognizerOptions = class CloudTextRecognizerOptions extends core.Object {
+    get hintedLanguages() {
+      return this[hintedLanguages$];
+    }
+    set hintedLanguages(value) {
+      super.hintedLanguages = value;
+    }
+    get textModelType() {
+      return this[textModelType$];
+    }
+    set textModelType(value) {
+      super.textModelType = value;
+    }
+  };
+  (firebase_ml_vision.CloudTextRecognizerOptions.new = function(opts) {
+    let hintedLanguages = opts && 'hintedLanguages' in opts ? opts.hintedLanguages : null;
+    let textModelType = opts && 'textModelType' in opts ? opts.textModelType : C[93] || CT.C93;
+    this[hintedLanguages$] = hintedLanguages;
+    this[textModelType$] = textModelType;
+    if (!(textModelType != null)) dart.assertFailed(null, I[5], 115, 16, "textModelType != null");
+    ;
+  }).prototype = firebase_ml_vision.CloudTextRecognizerOptions.prototype;
+  dart.addTypeTests(firebase_ml_vision.CloudTextRecognizerOptions);
+  dart.addTypeCaches(firebase_ml_vision.CloudTextRecognizerOptions);
+  dart.setLibraryUri(firebase_ml_vision.CloudTextRecognizerOptions, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.CloudTextRecognizerOptions, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.CloudTextRecognizerOptions.__proto__),
+    hintedLanguages: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(core.String)))),
+    textModelType: dart.finalFieldType(dart.legacy(firebase_ml_vision.CloudTextModelType))
+  }));
+  var text$ = dart.privateName(firebase_ml_vision, "VisionText.text");
+  var blocks = dart.privateName(firebase_ml_vision, "VisionText.blocks");
+  firebase_ml_vision.VisionText = class VisionText extends core.Object {
+    get text() {
+      return this[text$];
+    }
+    set text(value) {
+      super.text = value;
+    }
+    get blocks() {
+      return this[blocks];
+    }
+    set blocks(value) {
+      super.blocks = value;
+    }
+  };
+  (firebase_ml_vision.VisionText.__ = function(data) {
+    this[text$] = T.StringL().as(data[$_get]("text"));
+    this[blocks] = T.ListOfTextBlockL().unmodifiable(core.Iterable.as(dart.dgsend(data[$_get]("blocks"), [T.TextBlockL()], 'map', [dart.fn(block => new firebase_ml_vision.TextBlock.__(T.MapL().as(block)), T.dynamicToTextBlockL())])));
+    ;
+  }).prototype = firebase_ml_vision.VisionText.prototype;
+  dart.addTypeTests(firebase_ml_vision.VisionText);
+  dart.addTypeCaches(firebase_ml_vision.VisionText);
+  dart.setLibraryUri(firebase_ml_vision.VisionText, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.VisionText, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.VisionText.__proto__),
+    text: dart.finalFieldType(dart.legacy(core.String)),
+    blocks: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(firebase_ml_vision.TextBlock))))
+  }));
+  var boundingBox$0 = dart.privateName(firebase_ml_vision, "TextContainer.boundingBox");
+  var confidence$ = dart.privateName(firebase_ml_vision, "TextContainer.confidence");
+  var cornerPoints = dart.privateName(firebase_ml_vision, "TextContainer.cornerPoints");
+  var recognizedLanguages = dart.privateName(firebase_ml_vision, "TextContainer.recognizedLanguages");
+  var text$0 = dart.privateName(firebase_ml_vision, "TextContainer.text");
+  firebase_ml_vision.TextContainer = class TextContainer extends core.Object {
+    get boundingBox() {
+      return this[boundingBox$0];
+    }
+    set boundingBox(value) {
+      super.boundingBox = value;
+    }
+    get confidence() {
+      return this[confidence$];
+    }
+    set confidence(value) {
+      super.confidence = value;
+    }
+    get cornerPoints() {
+      return this[cornerPoints];
+    }
+    set cornerPoints(value) {
+      super.cornerPoints = value;
+    }
+    get recognizedLanguages() {
+      return this[recognizedLanguages];
+    }
+    set recognizedLanguages(value) {
+      super.recognizedLanguages = value;
+    }
+    get text() {
+      return this[text$0];
+    }
+    set text(value) {
+      super.text = value;
+    }
+  };
+  (firebase_ml_vision.TextContainer.__ = function(data) {
+    this[boundingBox$0] = data[$_get]("left") != null ? new ui.Rect.fromLTWH(core.double.as(data[$_get]("left")), core.double.as(data[$_get]("top")), core.double.as(data[$_get]("width")), core.double.as(data[$_get]("height"))) : null;
+    this[confidence$] = T.doubleL().as(data[$_get]("confidence") == null ? null : dart.dsend(data[$_get]("confidence"), 'toDouble', []));
+    this[cornerPoints] = T.ListOfOffsetL().unmodifiable(core.Iterable.as(dart.dgsend(data[$_get]("points"), [T.OffsetL()], 'map', [dart.fn(point => new ui.Offset.new(core.double.as(dart.dsend(point, '_get', [0])), core.double.as(dart.dsend(point, '_get', [1]))), T.dynamicToOffsetL())])));
+    this[recognizedLanguages] = T.ListOfRecognizedLanguageL().unmodifiable(core.Iterable.as(dart.dgsend(data[$_get]("recognizedLanguages"), [T.RecognizedLanguageL()], 'map', [dart.fn(language => new firebase_ml_vision.RecognizedLanguage.__(language), T.dynamicToRecognizedLanguageL())])));
+    this[text$0] = T.StringL().as(data[$_get]("text"));
+    ;
+  }).prototype = firebase_ml_vision.TextContainer.prototype;
+  dart.addTypeTests(firebase_ml_vision.TextContainer);
+  dart.addTypeCaches(firebase_ml_vision.TextContainer);
+  dart.setLibraryUri(firebase_ml_vision.TextContainer, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.TextContainer, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.TextContainer.__proto__),
+    boundingBox: dart.finalFieldType(dart.legacy(ui.Rect)),
+    confidence: dart.finalFieldType(dart.legacy(core.double)),
+    cornerPoints: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(ui.Offset)))),
+    recognizedLanguages: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(firebase_ml_vision.RecognizedLanguage)))),
+    text: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var lines = dart.privateName(firebase_ml_vision, "TextBlock.lines");
+  firebase_ml_vision.TextBlock = class TextBlock extends firebase_ml_vision.TextContainer {
+    get lines() {
+      return this[lines];
+    }
+    set lines(value) {
+      super.lines = value;
+    }
+  };
+  (firebase_ml_vision.TextBlock.__ = function(block) {
+    this[lines] = T.ListOfTextLineL().unmodifiable(core.Iterable.as(dart.dgsend(block[$_get]("lines"), [T.TextLineL()], 'map', [dart.fn(line => new firebase_ml_vision.TextLine.__(T.MapL().as(line)), T.dynamicToTextLineL())])));
+    firebase_ml_vision.TextBlock.__proto__.__.call(this, block);
+    ;
+  }).prototype = firebase_ml_vision.TextBlock.prototype;
+  dart.addTypeTests(firebase_ml_vision.TextBlock);
+  dart.addTypeCaches(firebase_ml_vision.TextBlock);
+  dart.setLibraryUri(firebase_ml_vision.TextBlock, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.TextBlock, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.TextBlock.__proto__),
+    lines: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(firebase_ml_vision.TextLine))))
+  }));
+  var elements = dart.privateName(firebase_ml_vision, "TextLine.elements");
+  firebase_ml_vision.TextLine = class TextLine extends firebase_ml_vision.TextContainer {
+    get elements() {
+      return this[elements];
+    }
+    set elements(value) {
+      super.elements = value;
+    }
+  };
+  (firebase_ml_vision.TextLine.__ = function(line) {
+    this[elements] = T.ListOfTextElementL().unmodifiable(core.Iterable.as(dart.dgsend(line[$_get]("elements"), [T.TextElementL()], 'map', [dart.fn(element => new firebase_ml_vision.TextElement.__(T.MapL().as(element)), T.dynamicToTextElementL())])));
+    firebase_ml_vision.TextLine.__proto__.__.call(this, line);
+    ;
+  }).prototype = firebase_ml_vision.TextLine.prototype;
+  dart.addTypeTests(firebase_ml_vision.TextLine);
+  dart.addTypeCaches(firebase_ml_vision.TextLine);
+  dart.setLibraryUri(firebase_ml_vision.TextLine, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.TextLine, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.TextLine.__proto__),
+    elements: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(firebase_ml_vision.TextElement))))
+  }));
+  firebase_ml_vision.TextElement = class TextElement extends firebase_ml_vision.TextContainer {};
+  (firebase_ml_vision.TextElement.__ = function(element) {
+    firebase_ml_vision.TextElement.__proto__.__.call(this, element);
+    ;
+  }).prototype = firebase_ml_vision.TextElement.prototype;
+  dart.addTypeTests(firebase_ml_vision.TextElement);
+  dart.addTypeCaches(firebase_ml_vision.TextElement);
+  dart.setLibraryUri(firebase_ml_vision.TextElement, I[0]);
+  firebase_ml_vision.TextRecognizedBreakType = class TextRecognizedBreakType extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (firebase_ml_vision.TextRecognizedBreakType.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = firebase_ml_vision.TextRecognizedBreakType.prototype;
+  dart.addTypeTests(firebase_ml_vision.TextRecognizedBreakType);
+  dart.addTypeCaches(firebase_ml_vision.TextRecognizedBreakType);
+  dart.setMethodSignature(firebase_ml_vision.TextRecognizedBreakType, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.TextRecognizedBreakType.__proto__),
+    toString: dart.fnType(dart.legacy(core.String), []),
+    [$toString]: dart.fnType(dart.legacy(core.String), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.TextRecognizedBreakType, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.TextRecognizedBreakType, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.TextRecognizedBreakType.__proto__),
+    index: dart.finalFieldType(dart.legacy(core.int)),
+    [_name$]: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  dart.defineExtensionMethods(firebase_ml_vision.TextRecognizedBreakType, ['toString']);
+  firebase_ml_vision.TextRecognizedBreakType.unknown = C[100] || CT.C100;
+  firebase_ml_vision.TextRecognizedBreakType.space = C[101] || CT.C101;
+  firebase_ml_vision.TextRecognizedBreakType.sureSpace = C[102] || CT.C102;
+  firebase_ml_vision.TextRecognizedBreakType.eolSureSpace = C[103] || CT.C103;
+  firebase_ml_vision.TextRecognizedBreakType.hyphen = C[104] || CT.C104;
+  firebase_ml_vision.TextRecognizedBreakType.lineBreak = C[105] || CT.C105;
+  firebase_ml_vision.TextRecognizedBreakType.values = C[106] || CT.C106;
+  firebase_ml_vision.DocumentTextRecognizer = class DocumentTextRecognizer extends core.Object {
+    processImage(visionImage) {
+      return async.async(T.VisionDocumentTextL(), (function* processImage() {
+        let t0;
+        if (!!dart.test(this[_isClosed])) dart.assertFailed(null, I[6], 50, 12, "!_isClosed");
+        if (!(visionImage != null)) dart.assertFailed(null, I[6], 51, 12, "visionImage != null");
+        this[_hasBeenOpened] = true;
+        let reply = (yield firebase_ml_vision.FirebaseVision.channel.invokeMapMethod(T.StringL(), dart.dynamic, "DocumentTextRecognizer#processImage", (t0 = new (T.IdentityMapOfStringL$dynamic()).from(["handle", this[_handle$], "options", new (T.IdentityMapOfStringL$dynamic()).from(["hintedLanguages", this[_cloudOptions].hintedLanguages])]), (() => {
+          t0[$addAll](visionImage[_serialize]());
+          return t0;
+        })())));
+        return new firebase_ml_vision.VisionDocumentText.__(reply);
+      }).bind(this));
+    }
+    close() {
+      if (!dart.test(this[_hasBeenOpened])) this[_isClosed] = true;
+      if (dart.test(this[_isClosed])) return T.FutureOfvoid().value(null);
+      this[_isClosed] = true;
+      return firebase_ml_vision.FirebaseVision.channel.invokeMethod(dart.void, "DocumentTextRecognizer#close", new (T.IdentityMapOfStringL$dynamic()).from(["handle", this[_handle$]]));
+    }
+  };
+  (firebase_ml_vision.DocumentTextRecognizer.__ = function(opts) {
+    let cloudOptions = opts && 'cloudOptions' in opts ? opts.cloudOptions : null;
+    let handle = opts && 'handle' in opts ? opts.handle : null;
+    this[_hasBeenOpened] = false;
+    this[_isClosed] = false;
+    this[_cloudOptions] = cloudOptions;
+    this[_handle$] = handle;
+    if (!(cloudOptions != null)) dart.assertFailed(null, I[6], 42, 16, "cloudOptions != null");
+    ;
+  }).prototype = firebase_ml_vision.DocumentTextRecognizer.prototype;
+  dart.addTypeTests(firebase_ml_vision.DocumentTextRecognizer);
+  dart.addTypeCaches(firebase_ml_vision.DocumentTextRecognizer);
+  dart.setMethodSignature(firebase_ml_vision.DocumentTextRecognizer, () => ({
+    __proto__: dart.getMethods(firebase_ml_vision.DocumentTextRecognizer.__proto__),
+    processImage: dart.fnType(dart.legacy(async.Future$(dart.legacy(firebase_ml_vision.VisionDocumentText))), [dart.legacy(firebase_ml_vision.FirebaseVisionImage)]),
+    close: dart.fnType(dart.legacy(async.Future$(dart.void)), [])
+  }));
+  dart.setLibraryUri(firebase_ml_vision.DocumentTextRecognizer, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.DocumentTextRecognizer, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.DocumentTextRecognizer.__proto__),
+    [_handle$]: dart.finalFieldType(dart.legacy(core.int)),
+    [_cloudOptions]: dart.finalFieldType(dart.legacy(firebase_ml_vision.CloudDocumentRecognizerOptions)),
+    [_hasBeenOpened]: dart.fieldType(dart.legacy(core.bool)),
+    [_isClosed]: dart.fieldType(dart.legacy(core.bool))
+  }));
+  const hintedLanguages$0 = CloudDocumentRecognizerOptions_hintedLanguages;
+  firebase_ml_vision.CloudDocumentRecognizerOptions = class CloudDocumentRecognizerOptions extends core.Object {
+    get hintedLanguages() {
+      return this[hintedLanguages$0];
+    }
+    set hintedLanguages(value) {
+      super.hintedLanguages = value;
+    }
+  };
+  (firebase_ml_vision.CloudDocumentRecognizerOptions.new = function(opts) {
+    let hintedLanguages = opts && 'hintedLanguages' in opts ? opts.hintedLanguages : null;
+    this[hintedLanguages$0] = hintedLanguages;
+    ;
+  }).prototype = firebase_ml_vision.CloudDocumentRecognizerOptions.prototype;
+  dart.addTypeTests(firebase_ml_vision.CloudDocumentRecognizerOptions);
+  dart.addTypeCaches(firebase_ml_vision.CloudDocumentRecognizerOptions);
+  dart.setLibraryUri(firebase_ml_vision.CloudDocumentRecognizerOptions, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.CloudDocumentRecognizerOptions, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.CloudDocumentRecognizerOptions.__proto__),
+    hintedLanguages: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(core.String))))
+  }));
+  var detectedBreakType = dart.privateName(firebase_ml_vision, "DocumentTextRecognizedBreak.detectedBreakType");
+  var isPrefix = dart.privateName(firebase_ml_vision, "DocumentTextRecognizedBreak.isPrefix");
+  firebase_ml_vision.DocumentTextRecognizedBreak = class DocumentTextRecognizedBreak extends core.Object {
+    get detectedBreakType() {
+      return this[detectedBreakType];
+    }
+    set detectedBreakType(value) {
+      super.detectedBreakType = value;
+    }
+    get isPrefix() {
+      return this[isPrefix];
+    }
+    set isPrefix(value) {
+      super.isPrefix = value;
+    }
+  };
+  (firebase_ml_vision.DocumentTextRecognizedBreak.__ = function(data) {
+    this[detectedBreakType] = firebase_ml_vision.TextRecognizedBreakType.values[$_get](T.intL().as(dart.dsend(data, '_get', ["detectedBreakType"])));
+    this[isPrefix] = T.boolL().as(dart.dsend(data, '_get', ["detectedBreakPrefix"]));
+    ;
+  }).prototype = firebase_ml_vision.DocumentTextRecognizedBreak.prototype;
+  dart.addTypeTests(firebase_ml_vision.DocumentTextRecognizedBreak);
+  dart.addTypeCaches(firebase_ml_vision.DocumentTextRecognizedBreak);
+  dart.setLibraryUri(firebase_ml_vision.DocumentTextRecognizedBreak, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.DocumentTextRecognizedBreak, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.DocumentTextRecognizedBreak.__proto__),
+    detectedBreakType: dart.finalFieldType(dart.legacy(firebase_ml_vision.TextRecognizedBreakType)),
+    isPrefix: dart.finalFieldType(dart.legacy(core.bool))
+  }));
+  var text$1 = dart.privateName(firebase_ml_vision, "VisionDocumentText.text");
+  var blocks$ = dart.privateName(firebase_ml_vision, "VisionDocumentText.blocks");
+  firebase_ml_vision.VisionDocumentText = class VisionDocumentText extends core.Object {
+    get text() {
+      return this[text$1];
+    }
+    set text(value) {
+      super.text = value;
+    }
+    get blocks() {
+      return this[blocks$];
+    }
+    set blocks(value) {
+      super.blocks = value;
+    }
+  };
+  (firebase_ml_vision.VisionDocumentText.__ = function(data) {
+    this[text$1] = T.StringL().as(data[$_get]("text"));
+    this[blocks$] = T.ListOfDocumentTextBlockL().unmodifiable(core.Iterable.as(dart.dgsend(data[$_get]("blocks"), [T.DocumentTextBlockL()], 'map', [dart.fn(block => new firebase_ml_vision.DocumentTextBlock.__(T.MapL().as(block)), T.dynamicToDocumentTextBlockL())])));
+    ;
+  }).prototype = firebase_ml_vision.VisionDocumentText.prototype;
+  dart.addTypeTests(firebase_ml_vision.VisionDocumentText);
+  dart.addTypeCaches(firebase_ml_vision.VisionDocumentText);
+  dart.setLibraryUri(firebase_ml_vision.VisionDocumentText, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.VisionDocumentText, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.VisionDocumentText.__proto__),
+    text: dart.finalFieldType(dart.legacy(core.String)),
+    blocks: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(firebase_ml_vision.DocumentTextBlock))))
+  }));
+  var boundingBox$1 = dart.privateName(firebase_ml_vision, "DocumentTextContainer.boundingBox");
+  var confidence$0 = dart.privateName(firebase_ml_vision, "DocumentTextContainer.confidence");
+  var recognizedBreak = dart.privateName(firebase_ml_vision, "DocumentTextContainer.recognizedBreak");
+  var recognizedLanguages$ = dart.privateName(firebase_ml_vision, "DocumentTextContainer.recognizedLanguages");
+  var text$2 = dart.privateName(firebase_ml_vision, "DocumentTextContainer.text");
+  firebase_ml_vision.DocumentTextContainer = class DocumentTextContainer extends core.Object {
+    get boundingBox() {
+      return this[boundingBox$1];
+    }
+    set boundingBox(value) {
+      super.boundingBox = value;
+    }
+    get confidence() {
+      return this[confidence$0];
+    }
+    set confidence(value) {
+      super.confidence = value;
+    }
+    get recognizedBreak() {
+      return this[recognizedBreak];
+    }
+    set recognizedBreak(value) {
+      super.recognizedBreak = value;
+    }
+    get recognizedLanguages() {
+      return this[recognizedLanguages$];
+    }
+    set recognizedLanguages(value) {
+      super.recognizedLanguages = value;
+    }
+    get text() {
+      return this[text$2];
+    }
+    set text(value) {
+      super.text = value;
+    }
+  };
+  (firebase_ml_vision.DocumentTextContainer.__ = function(data) {
+    this[boundingBox$1] = data[$_get]("left") != null ? new ui.Rect.fromLTWH(core.double.as(data[$_get]("left")), core.double.as(data[$_get]("top")), core.double.as(data[$_get]("width")), core.double.as(data[$_get]("height"))) : null;
+    this[confidence$0] = T.doubleL().as(data[$_get]("confidence") == null ? null : dart.dsend(data[$_get]("confidence"), 'toDouble', []));
+    this[recognizedBreak] = data[$_get]("recognizedBreak") == null ? null : new firebase_ml_vision.DocumentTextRecognizedBreak.__(data[$_get]("recognizedBreak"));
+    this[recognizedLanguages$] = T.ListOfRecognizedLanguageL().unmodifiable(core.Iterable.as(dart.dgsend(data[$_get]("recognizedLanguages"), [T.RecognizedLanguageL()], 'map', [dart.fn(language => new firebase_ml_vision.RecognizedLanguage.__(language), T.dynamicToRecognizedLanguageL())])));
+    this[text$2] = T.StringL().as(data[$_get]("text"));
+    ;
+  }).prototype = firebase_ml_vision.DocumentTextContainer.prototype;
+  dart.addTypeTests(firebase_ml_vision.DocumentTextContainer);
+  dart.addTypeCaches(firebase_ml_vision.DocumentTextContainer);
+  dart.setLibraryUri(firebase_ml_vision.DocumentTextContainer, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.DocumentTextContainer, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.DocumentTextContainer.__proto__),
+    boundingBox: dart.finalFieldType(dart.legacy(ui.Rect)),
+    confidence: dart.finalFieldType(dart.legacy(core.double)),
+    recognizedBreak: dart.finalFieldType(dart.legacy(firebase_ml_vision.DocumentTextRecognizedBreak)),
+    recognizedLanguages: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(firebase_ml_vision.RecognizedLanguage)))),
+    text: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var paragraphs = dart.privateName(firebase_ml_vision, "DocumentTextBlock.paragraphs");
+  firebase_ml_vision.DocumentTextBlock = class DocumentTextBlock extends firebase_ml_vision.DocumentTextContainer {
+    get paragraphs() {
+      return this[paragraphs];
+    }
+    set paragraphs(value) {
+      super.paragraphs = value;
+    }
+  };
+  (firebase_ml_vision.DocumentTextBlock.__ = function(block) {
+    this[paragraphs] = T.ListOfDocumentTextParagraphL().unmodifiable(core.Iterable.as(dart.dgsend(block[$_get]("paragraphs"), [T.DocumentTextParagraphL()], 'map', [dart.fn(paragraph => new firebase_ml_vision.DocumentTextParagraph.__(T.MapL().as(paragraph)), T.dynamicToDocumentTextParagraphL())])));
+    firebase_ml_vision.DocumentTextBlock.__proto__.__.call(this, block);
+    ;
+  }).prototype = firebase_ml_vision.DocumentTextBlock.prototype;
+  dart.addTypeTests(firebase_ml_vision.DocumentTextBlock);
+  dart.addTypeCaches(firebase_ml_vision.DocumentTextBlock);
+  dart.setLibraryUri(firebase_ml_vision.DocumentTextBlock, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.DocumentTextBlock, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.DocumentTextBlock.__proto__),
+    paragraphs: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(firebase_ml_vision.DocumentTextParagraph))))
+  }));
+  var words = dart.privateName(firebase_ml_vision, "DocumentTextParagraph.words");
+  firebase_ml_vision.DocumentTextParagraph = class DocumentTextParagraph extends firebase_ml_vision.DocumentTextContainer {
+    get words() {
+      return this[words];
+    }
+    set words(value) {
+      super.words = value;
+    }
+  };
+  (firebase_ml_vision.DocumentTextParagraph.__ = function(paragraph) {
+    this[words] = T.ListOfDocumentTextWordL().unmodifiable(core.Iterable.as(dart.dgsend(paragraph[$_get]("words"), [T.DocumentTextWordL()], 'map', [dart.fn(word => new firebase_ml_vision.DocumentTextWord.__(T.MapL().as(word)), T.dynamicToDocumentTextWordL())])));
+    firebase_ml_vision.DocumentTextParagraph.__proto__.__.call(this, paragraph);
+    ;
+  }).prototype = firebase_ml_vision.DocumentTextParagraph.prototype;
+  dart.addTypeTests(firebase_ml_vision.DocumentTextParagraph);
+  dart.addTypeCaches(firebase_ml_vision.DocumentTextParagraph);
+  dart.setLibraryUri(firebase_ml_vision.DocumentTextParagraph, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.DocumentTextParagraph, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.DocumentTextParagraph.__proto__),
+    words: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(firebase_ml_vision.DocumentTextWord))))
+  }));
+  var symbols = dart.privateName(firebase_ml_vision, "DocumentTextWord.symbols");
+  firebase_ml_vision.DocumentTextWord = class DocumentTextWord extends firebase_ml_vision.DocumentTextContainer {
+    get symbols() {
+      return this[symbols];
+    }
+    set symbols(value) {
+      super.symbols = value;
+    }
+  };
+  (firebase_ml_vision.DocumentTextWord.__ = function(word) {
+    this[symbols] = T.ListOfDocumentTextSymbolL().unmodifiable(core.Iterable.as(dart.dgsend(word[$_get]("symbols"), [T.DocumentTextSymbolL()], 'map', [dart.fn(symbol => new firebase_ml_vision.DocumentTextSymbol.__(T.MapL().as(symbol)), T.dynamicToDocumentTextSymbolL())])));
+    firebase_ml_vision.DocumentTextWord.__proto__.__.call(this, word);
+    ;
+  }).prototype = firebase_ml_vision.DocumentTextWord.prototype;
+  dart.addTypeTests(firebase_ml_vision.DocumentTextWord);
+  dart.addTypeCaches(firebase_ml_vision.DocumentTextWord);
+  dart.setLibraryUri(firebase_ml_vision.DocumentTextWord, I[0]);
+  dart.setFieldSignature(firebase_ml_vision.DocumentTextWord, () => ({
+    __proto__: dart.getFields(firebase_ml_vision.DocumentTextWord.__proto__),
+    symbols: dart.finalFieldType(dart.legacy(core.List$(dart.legacy(firebase_ml_vision.DocumentTextSymbol))))
+  }));
+  firebase_ml_vision.DocumentTextSymbol = class DocumentTextSymbol extends firebase_ml_vision.DocumentTextContainer {};
+  (firebase_ml_vision.DocumentTextSymbol.__ = function(symbol) {
+    firebase_ml_vision.DocumentTextSymbol.__proto__.__.call(this, symbol);
+    ;
+  }).prototype = firebase_ml_vision.DocumentTextSymbol.prototype;
+  dart.addTypeTests(firebase_ml_vision.DocumentTextSymbol);
+  dart.addTypeCaches(firebase_ml_vision.DocumentTextSymbol);
+  dart.setLibraryUri(firebase_ml_vision.DocumentTextSymbol, I[0]);
+  firebase_ml_vision._enumToString = function _enumToString(enumValue) {
+    let enumString = dart.toString(enumValue);
+    return enumString[$substring](enumString[$indexOf](".") + 1);
+  };
+  dart.trackLibraries("packages/firebase_ml_vision/firebase_ml_vision.dart", {
+    "package:firebase_ml_vision/firebase_ml_vision.dart": firebase_ml_vision
+  }, {
+    "package:firebase_ml_vision/firebase_ml_vision.dart": ["src/barcode_detector.dart", "src/face_detector.dart", "src/firebase_vision.dart", "src/image_labeler.dart", "src/text_recognizer.dart", "src/document_text_recognizer.dart"]
+  }, '{"version":3,"sourceRoot":"","sources":["src/barcode_detector.dart","src/face_detector.dart","src/firebase_vision.dart","src/image_labeler.dart","src/text_recognizer.dart","src/document_text_recognizer.dart"],"names":[],"mappings":"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","file":"../../../../../../../E:/packages/firebase_ml_vision/firebase_ml_vision.dart.lib.js"}');
+  // Exports:
+  return {
+    firebase_ml_vision: firebase_ml_vision
+  };
+}));
+
+//# sourceMappingURL=firebase_ml_vision.dart.lib.js.map
